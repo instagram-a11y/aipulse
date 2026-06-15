@@ -1,0 +1,183 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "book": "Book",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "login": "Sign in",
+    "cta": "Book a Call"
+  },
+  "hero": {
+    "label": "AI Consulting · Canada",
+    "line1": "Your vision, our",
+    "line2": "intelligence,",
+    "line3": "one pulse.",
+    "tagline": "Your vision, our intelligence, one pulse.",
+    "cta_primary": "Book a Consultation",
+    "cta_secondary": "Our Services",
+    "scroll": "Scroll"
+  },
+  "intro": {
+    "line": "We don't sell software. We engineer intelligence."
+  },
+  "services": {
+    "label": "What we offer",
+    "heading": "What we build for you",
+    "items": {
+      "agents": {
+        "title": "AI Agents",
+        "body": "Autonomous agents trained on your data, deployed in your environment."
+      },
+      "automation": {
+        "title": "Workflow Automation",
+        "body": "End-to-end automation of your business processes, start to finish."
+      },
+      "webapps": {
+        "title": "AI Web Applications",
+        "body": "Intelligent web apps with smart search, recommendations, and chat built in."
+      },
+      "cloud": {
+        "title": "Cloud Solutions",
+        "body": "Scalable, secure infrastructure for AI workloads and ongoing optimization."
+      },
+      "strategy": {
+        "title": "AI Strategy",
+        "body": "Discovery sessions and roadmaps that find where AI creates real value."
+      },
+      "custom": {
+        "title": "Custom Applications",
+        "body": "Mobile and desktop applications with AI capabilities, concept to launch."
+      }
+    },
+    "process_heading": "How we work",
+    "process": {
+      "discovery": { "title": "Discovery", "body": "We listen to your operations, team, and goals." },
+      "design": { "title": "Design", "body": "We architect a solution built precisely for you." },
+      "build": { "title": "Build", "body": "We engineer it from scratch, no templates." },
+      "deploy": { "title": "Deploy", "body": "We launch, monitor, and stay engaged beyond." }
+    },
+    "pricing_note": "Every project is scoped and priced custom — no off-the-shelf plans.",
+    "usecases": "Use cases"
+  },
+  "why": {
+    "label": "Why AIPulse",
+    "heading": "Why work with us",
+    "custom": { "title": "Custom, not generic", "body": "Every solution is built from scratch for your business." },
+    "discovery": { "title": "Discovery first", "body": "We listen before we propose or build anything." },
+    "partnership": { "title": "Long-term partnership", "body": "We stay with you well beyond launch." }
+  },
+  "team": {
+    "label": "The team",
+    "heading": "Built by a team, for your team.",
+    "title": "Strategists, engineers & designers — Canada",
+    "bio": "AIPulse is not a one-person shop. We're a team of AI strategists, engineers, and designers who partner with you end to end — from the first discovery session to long after launch. Different specialists, one shared standard: intelligence engineered precisely for your business.",
+    "link": "Meet AIPulse"
+  },
+  "homeCta": {
+    "heading": "Ready to build your intelligent future?",
+    "button": "Book a Consultation"
+  },
+  "about": {
+    "label": "About AIPulse",
+    "hero_title": "Built on precision. Driven by partnership.",
+    "story_label": "Our Story",
+    "story_heading": "The intelligence your business deserves.",
+    "story_p1": "AIPulse was founded in Canada with a single conviction: every business deserves AI that is engineered for it — not adapted from a generic template.",
+    "story_p2": "Every engagement begins with a discovery session. We ask about your operations, your team, your goals, and the gaps between where you are and where you want to be. Only then do we design and build.",
+    "story_p3": "The result is an AI system that fits your business precisely — and a partnership that continues long after launch.",
+    "values_label": "What we stand for",
+    "values": {
+      "precision": { "title": "Precision", "body": "We engineer, not approximate. Every detail is intentional." },
+      "custom": { "title": "Custom-built", "body": "No templates. No recycled logic. Built for you, only." },
+      "partnership": { "title": "Partnership", "body": "We stay engaged well beyond the initial delivery." },
+      "longterm": { "title": "Long-term", "body": "We measure success in your growth, not project completions." }
+    },
+    "facts": {
+      "founded": { "value": "2024", "label": "Year founded" },
+      "hq": { "value": "Canada", "label": "Headquarters" },
+      "expertise": { "value": "AI + Cloud", "label": "Core expertise" }
+    },
+    "cta_heading": "Let's talk about your business",
+    "cta_button": "Book a Consultation"
+  },
+  "book": {
+    "label": "Get started",
+    "heading": "Book a Consultation",
+    "sub": "Reserve a paid one-on-one session. Choose a time that works for you.",
+    "step_type": "Choose a session",
+    "step_time": "Pick a time",
+    "step_confirm": "Confirm & pay",
+    "duration": "{minutes} min",
+    "price": "{price}",
+    "select": "Select",
+    "no_slots": "No open times in this range. Try another day.",
+    "loading_slots": "Loading available times…",
+    "signin_required": "Please sign in to book a session.",
+    "proceed_payment": "Proceed to payment",
+    "expect_heading": "What to expect",
+    "expect1": "We'll ask about your business and goals",
+    "expect2": "We'll share where AI can create real value for you",
+    "expect3": "An honest, focused conversation — no fluff",
+    "success_heading": "Your session is booked",
+    "success_body": "Check your email for the confirmation and Google Meet link. You can also see it in your dashboard.",
+    "cancelled_heading": "Payment cancelled",
+    "cancelled_body": "Your session was not booked. You can try again whenever you're ready."
+  },
+  "auth": {
+    "login_heading": "Welcome back",
+    "register_heading": "Create your account",
+    "email": "Email",
+    "password": "Password",
+    "full_name": "Full name",
+    "sign_in": "Sign in",
+    "sign_up": "Create account",
+    "google": "Continue with Google",
+    "or": "or",
+    "have_account": "Already have an account?",
+    "no_account": "Don't have an account?",
+    "sign_out": "Sign out",
+    "check_email": "Check your email to confirm your account.",
+    "error_generic": "Something went wrong. Please try again."
+  },
+  "dashboard": {
+    "heading": "Your dashboard",
+    "welcome": "Welcome, {name}",
+    "upcoming": "Upcoming sessions",
+    "past": "Past sessions",
+    "none_upcoming": "You have no upcoming sessions.",
+    "book_one": "Book a consultation",
+    "join": "Join with Google Meet",
+    "status_confirmed": "Confirmed",
+    "status_pending": "Pending payment",
+    "status_cancelled": "Cancelled"
+  },
+  "contact": {
+    "label": "Contact",
+    "heading": "Get in Touch",
+    "sub": "Tell us about your business and we'll get back to you.",
+    "info_heading": "Reach us directly",
+    "email_label": "Email",
+    "location_label": "Location",
+    "location_value": "Canada",
+    "response": "We respond within 24 hours.",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Message",
+      "language": "Preferred language",
+      "lang_en": "English",
+      "lang_fa": "Farsi",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Thank you — your message has been sent.",
+      "error": "Could not send. Please try again or email us directly."
+    }
+  },
+  "footer": {
+    "tagline": "Your vision, our intelligence, one pulse.",
+    "copy": "© 2025 AIPulse Inc. All rights reserved."
+  }
+}
