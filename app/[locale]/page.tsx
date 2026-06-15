@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
-import { Link } from '@/i18n/routing'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { Bot, Workflow, Globe, Cloud, Target, Code2, ChevronDown, type LucideIcon } from 'lucide-react'
 import { PulseCrest } from '@/components/PulseCrest'

@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
-import { Link } from '@/i18n/routing'
+import { Link } from '@/i18n/navigation'
 import { Bot, Workflow, Globe, Cloud, Target, Code2, type LucideIcon } from 'lucide-react'
 import { FadeUp } from '@/components/FadeUp'
 

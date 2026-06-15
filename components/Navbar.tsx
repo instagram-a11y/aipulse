@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useLocale, useTranslations } from 'next-intl'
-import { Link, usePathname, useRouter } from '@/i18n/routing'
+import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { PulseCrest } from './PulseCrest'
 import { Wordmark } from './Wordmark'
 

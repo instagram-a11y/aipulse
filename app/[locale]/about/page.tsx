@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
-import { Link } from '@/i18n/routing'
+import { Link } from '@/i18n/navigation'
 import { FadeUp } from '@/components/FadeUp'
 import { PhotoPlaceholder } from '@/components/PhotoPlaceholder'
 import { SectionBg } from '@/components/SectionBg'
