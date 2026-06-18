@@ -2,8 +2,7 @@ import { useTranslations } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { PulseCrest } from '@/components/PulseCrest'
 import { FadeUp } from '@/components/FadeUp'
-
-const CONTACT_EMAIL = 'hello@aipulse.ca'
+import { CalEmbed } from '@/components/CalEmbed'
 
 export default function BookPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale)
@@ -23,29 +22,12 @@ export default function BookPage({ params: { locale } }: { params: { locale: str
         </FadeUp>
       </section>
 
-      {/* Booking placeholder — activated in the next phase */}
+      {/* Cal.com embed */}
       <section className="bg-cream py-20 px-6">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <FadeUp>
-            <div className="bg-white border border-gold/20 p-12 text-center">
-              <div className="gold-rule w-10 mx-auto mb-6" />
-              <p className="font-display text-2xl text-navy mb-4">
-                {locale === 'fa'
-                  ? 'سیستم رزرو آنلاین به‌زودی فعال می‌شود'
-                  : 'Online booking is coming online shortly'}
-              </p>
-              <p className="text-sm text-silver leading-relaxed mb-8">
-                {locale === 'fa'
-                  ? 'برای هماهنگی جلسه‌ی مشاوره، فعلاً با ایمیل زیر در تماس باشید.'
-                  : 'To arrange a consultation session in the meantime, reach us by email.'}
-              </p>
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="inline-flex border border-gold text-navy text-xs tracking-widest uppercase
-                           px-8 py-4 hover:bg-gold hover:text-navy transition-all duration-300"
-              >
-                {CONTACT_EMAIL}
-              </a>
+            <div className="bg-white border border-gold/20 min-h-[600px]">
+              <CalEmbed />
             </div>
           </FadeUp>
 

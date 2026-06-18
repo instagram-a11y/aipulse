@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@hookform/resolvers": "^5.4.0",
     "@stripe/stripe-js": "^9.8.0",
     "@supabase/ssr": "^0.12.0",
