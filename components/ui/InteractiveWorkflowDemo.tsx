@@ -11,7 +11,7 @@ export function InteractiveWorkflowDemo() {
 
       {/* Main Glass Panel */}
       <motion.div 
-        className="relative z-10 w-full max-w-sm rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl p-6 overflow-hidden"
+        className="relative z-10 w-full max-w-[90vw] sm:max-w-sm rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl p-6 overflow-hidden"
         initial={{ rotateX: 10, rotateY: -10, opacity: 0 }}
         animate={{ rotateX: 0, rotateY: 0, opacity: 1 }}
         transition={{ duration: 1, ease: 'easeOut' }}

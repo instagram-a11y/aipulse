@@ -105,12 +105,12 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       </section>
 
       {/* 4.5. PREMIUM CORPORATE IMPACT (Automation & Chatbots) */}
-      <section className="relative py-40 overflow-hidden bg-ink-navy">
-        <div className="absolute inset-0 z-0 flex w-full">
-           <div className="w-1/2 relative h-full">
+      <section className="relative py-32 lg:py-40 overflow-hidden bg-ink-navy">
+        <div className="absolute inset-0 z-0 flex flex-col md:flex-row w-full">
+           <div className="w-full md:w-1/2 relative h-1/2 md:h-full">
              <Image src="/images/automation.jpg" alt="Enterprise Automation" fill className="object-cover opacity-40 mix-blend-screen" />
            </div>
-           <div className="w-1/2 relative h-full">
+           <div className="w-full md:w-1/2 relative h-1/2 md:h-full">
              <Image src="/images/ai_chatbot.jpg" alt="AI Chatbots" fill className="object-cover opacity-40 mix-blend-screen" />
            </div>
         </div>
