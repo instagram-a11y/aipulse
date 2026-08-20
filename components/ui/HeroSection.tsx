@@ -7,8 +7,12 @@ import { ArrowRight } from 'lucide-react'
 
 import { InteractiveWorkflowDemo } from './InteractiveWorkflowDemo'
 import { GoldServiceTicker } from './GoldServiceTicker'
-import { Hero3DScene } from './Hero3DScene'
+import dynamic from 'next/dynamic'
 import { useTranslations } from 'next-intl'
+
+const Hero3DScene = dynamic(() => import('./Hero3DScene').then(mod => mod.Hero3DScene), { 
+  ssr: false,
+})
 
 export function HeroSection({ isRtl }: { isRtl: boolean }) {
   const t = useTranslations('hero')
