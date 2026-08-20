@@ -63,7 +63,7 @@ function QuantumCore() {
       {/* Central AI Brain (Icosahedron + Sphere) */}
       <group ref={coreRef}>
         <mesh>
-          <icosahedronGeometry args={[1.5, 0]} />
+          <icosahedronGeometry args={[1.5, 1]} />
           <meshBasicMaterial color="#C6A15B" wireframe transparent opacity={0.6} />
         </mesh>
         <mesh>
