@@ -3,74 +3,28 @@
 import { useState, useRef, useEffect } from 'react'
 import { MessageSquare, X, Send, Loader2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useChat } from '@ai-sdk/react'
 
 export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
   const [isOpen, setIsOpen] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   
-  const [input, setInput] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [messages, setMessages] = useState<{ id: string; role: string; content: string }[]>([
-    {
-      id: '1',
-      role: 'assistant',
-      content: isRtl
-        ? 'سلام! من مشاور هوش مصنوعی AI Pulse هستم. چطور می‌تونم برای توسعه و پیاده‌سازی راهکارهای هوش مصنوعی به کسب‌وکار شما کمک کنم؟'
-        : 'Hello! I am the AI Pulse consultant. How can I help you transform your business with AI today?'
-    }
-  ])
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (!input.trim() || isLoading) return
-    
-    const userMsg = { id: Date.now().toString(), role: 'user', content: input }
-    const newMessages = [...messages, userMsg]
-    setMessages(newMessages)
-    setInput('')
-    setIsLoading(true)
-
-    try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMessages }),
-      })
-
-      if (!response.ok) throw new Error('Network response was not ok')
-      
-      const reader = response.body?.getReader()
-      if (!reader) return
-      
-      const decoder = new TextDecoder()
-      let assistantContent = ''
-      
-      const assistantMsg = { id: (Date.now() + 1).toString(), role: 'assistant', content: '' }
-      setMessages([...newMessages, assistantMsg])
-      
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
-        
-        const chunk = decoder.decode(value)
-        assistantContent += chunk
-        
-        setMessages((prev) => {
-          const updated = [...prev]
-          updated[updated.length - 1].content = assistantContent
-          return updated
-        })
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
+    api: '/api/chat',
+    initialMessages: [
+      {
+        id: '1',
+        role: 'assistant',
+        content: isRtl
+          ? 'سلام! من مشاور هوش مصنوعی AI Pulse هستم. چطور می‌تونم برای توسعه و پیاده‌سازی راهکارهای هوش مصنوعی به کسب‌وکار شما کمک کنم؟'
+          : 'Hello! I am the AI Pulse consultant. How can I help you transform your business with AI today?'
       }
-    } catch (error) {
-      console.error('Chat error:', error)
-    } finally {
-      setIsLoading(false)
+    ],
+    onError: (err) => {
+      console.error('Chat error:', err)
+      alert(isRtl ? 'خطا در ارتباط با سرور. لطفاً تنظیمات API را بررسی کنید.' : 'Connection error. Please check your API settings.')
     }
-  }
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value)
-  }
+  })
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -136,15 +90,15 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
               <div className="p-4 bg-black/20 border-t border-white/10">
                 <form onSubmit={handleSubmit} className="relative flex items-center" dir={isRtl ? 'rtl' : 'ltr'}>
                   <input
-                    value={input}
+                    value={input || ''}
                     onChange={handleInputChange}
                     placeholder={isRtl ? "پیام خود را بنویسید..." : "Type your message..."}
                     className={`w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all ${isRtl ? 'pl-12' : 'pr-12'}`}
-                    disabled={proposalReady}
+                    disabled={proposalReady || isLoading}
                   />
                   <button
                     type="submit"
-                    disabled={isLoading || !input.trim() || proposalReady}
+                    disabled={isLoading || !(input || '').trim() || proposalReady}
                     className={`absolute ${isRtl ? 'left-2' : 'right-2'} p-2 bg-gold text-deep-navy rounded-lg hover:bg-gold/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors`}
                   >
                     <Send className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />

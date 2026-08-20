@@ -15,22 +15,33 @@ export default function AboutPage() {
   const containerRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start end', 'end start'],
+    offset: ['start start', 'end end'],
   })
 
   // Parallax effect for the image
-  const y = useTransform(scrollYProgress, [0, 1], [-50, 50])
+  const y = useTransform(scrollYProgress, [0, 1], [-100, 100])
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2])
 
   return (
     <main className="min-h-screen bg-deep-navy text-white font-sans relative overflow-x-hidden" ref={containerRef}>
+      {/* Scroll Progress Bar */}
+      <motion.div 
+        className="fixed top-0 left-0 right-0 h-1 bg-gold origin-left z-50"
+        style={{ scaleX: scrollYProgress }}
+      />
+
       {/* Global Luxury Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
+      <motion.div className="fixed inset-0 z-0 pointer-events-none opacity-20" style={{ scale }}>
         <Image src="/images/luxury_abstract_bg.jpg" alt="Luxury Background" fill className="object-cover" />
-      </div>
+      </motion.div>
 
       <div className="relative z-10">
         {/* Section 1 — Hero Motion Tour */}
-        <section className="relative min-h-[80vh] flex items-center justify-center text-center overflow-hidden pt-20">
+        <motion.section 
+          style={{ opacity }}
+          className="relative min-h-[80vh] flex items-center justify-center text-center overflow-hidden pt-20"
+        >
           <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen">
              <Image src="/images/abstract_3d.jpg" alt="Abstract Nodes" fill className="object-cover" />
           </div>
@@ -82,16 +93,18 @@ export default function AboutPage() {
             <FadeUp delay={0.2} className="relative h-full min-h-[500px] w-full perspective-[1000px]">
               <motion.div 
                 style={{ y }}
-                className="relative w-full h-[500px] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group"
+                className="relative w-full h-[600px] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group"
               >
                 {/* Fallback color if image is missing */}
                 <div className="absolute inset-0 bg-ink-navy" />
-                <Image 
-                  src="/images/team-aipulse.webp" 
-                  alt="AIPulse Story" 
-                  fill 
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" 
-                />
+                <motion.div style={{ scale }} className="absolute inset-0">
+                  <Image 
+                    src="/images/team-aipulse.webp" 
+                    alt="AIPulse Story" 
+                    fill 
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out" 
+                  />
+                </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">

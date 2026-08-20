@@ -11,7 +11,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json()
 
   const result = await streamText({
-    model: google('gemini-1.5-flash'),
+    model: google('gemini-flash-latest'),
     messages,
     system: `You are an expert AI Consultant working for "AI Pulse", a luxury AI agency based in Canada. 
     Your goal is to talk to potential clients, understand their business, and gather enough requirements to propose a custom AI solution.

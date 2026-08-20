@@ -37,32 +37,32 @@
     }
   },
   "services": {
-    "label": "AI Solutions & Consulting",
-    "heading": "Transforming Businesses with Artificial Intelligence",
+    "label": "AI Consulting & Tailored Solutions",
+    "heading": "Designing the Future of Your Business with Intelligent Consulting",
     "items": {
+      "strategy": {
+        "title": "AI Strategy & Consultation",
+        "body": "Through dedicated consultation sessions, we analyze your business model and identify the most lucrative opportunities for AI implementation with the highest ROI."
+      },
       "agents": {
-        "title": "Custom AI Agents",
-        "body": "We build bespoke AI agents tailored to your business logic. These intelligent assistants can handle customer inquiries, process documents, and make decisions autonomously, saving you thousands of hours of manual work."
+        "title": "Custom AI Assistants",
+        "body": "Bespoke AI agents that learn your company's culture and logic, responding to clients 24/7 and saving thousands of hours of manual work."
       },
       "automation": {
-        "title": "Process Automation",
-        "body": "Identify and eliminate bottlenecks. We integrate intelligent automation across your existing tools to streamline operations, reduce human error, and accelerate your time-to-market."
+        "title": "Comprehensive Process Automation",
+        "body": "Free your team from repetitive tasks. By integrating intelligent systems, we reduce human error and drastically increase the speed and quality of your services."
+      },
+      "cloud": {
+        "title": "Data Infrastructure & Cloud",
+        "body": "Organizing your scattered databases into a secure and scalable cloud architecture, ready to be connected to the most advanced machine learning models."
       },
       "webapps": {
         "title": "AI-Powered Platforms",
-        "body": "Development of dynamic, highly scalable web applications and platforms with built-in machine learning capabilities, enabling personalized user experiences and predictive insights."
-      },
-      "cloud": {
-        "title": "Data & Cloud Infrastructure",
-        "body": "Secure, scalable, and optimized cloud architectures. We help you organize your unstructured data into centralized data lakes, making it ready for advanced AI training and analytics."
-      },
-      "strategy": {
-        "title": "AI Strategy Consulting",
-        "body": "Not sure where to start? We assess your business model, identify high-ROI opportunities for AI integration, and create a comprehensive roadmap for digital transformation."
+        "body": "Creating websites and applications with built-in AI that deliver a deeply personalized and luxurious experience for your customers."
       },
       "custom": {
-        "title": "CRM & ERP Integration",
-        "body": "Seamlessly connect intelligent systems into your existing CRM (Salesforce, HubSpot, etc.) or ERP. Automate lead scoring, customer follow-ups, and inventory forecasting."
+        "title": "Seamless Systems Integration",
+        "body": "Secure and flawless connection of AI solutions to your existing CRM and ERP software, without needing to change the tools you already rely on."
       }
     },
     "process_heading": "Our Consulting Methodology",

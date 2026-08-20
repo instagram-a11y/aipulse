@@ -92,6 +92,40 @@ export default function ServicesPage({ params: { locale } }: { params: { locale:
           </div>
         </section>
 
+        {/* Visual Banners Section */}
+        <section className="py-20 px-6 max-w-[1400px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            <FadeUp className="relative h-[400px] rounded-3xl overflow-hidden group">
+              <Image 
+                src="/images/automation.jpg" 
+                alt="Process Automation" 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-10">
+                <Workflow className="w-10 h-10 text-gold mb-4" />
+                <h3 className="font-display text-white text-3xl mb-2">{t('items.automation.title')}</h3>
+                <p className="text-white/80 font-light">{t('items.automation.body')}</p>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.2} className="relative h-[400px] rounded-3xl overflow-hidden group">
+              <Image 
+                src="/images/ai_chatbot.jpg" 
+                alt="AI Agents" 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-10">
+                <Bot className="w-10 h-10 text-gold mb-4" />
+                <h3 className="font-display text-white text-3xl mb-2">{t('items.agents.title')}</h3>
+                <p className="text-white/80 font-light">{t('items.agents.body')}</p>
+              </div>
+            </FadeUp>
+          </div>
+        </section>
+
         {/* Pricing Note */}
         <section className="py-16 px-6 text-center border-t border-white/5 bg-ink-navy/30">
           <FadeUp>
@@ -103,7 +137,10 @@ export default function ServicesPage({ params: { locale } }: { params: { locale:
 
         {/* Final CTA */}
         <section className="relative py-40 px-6 text-center overflow-hidden border-t border-white/5">
-          <div className="absolute inset-0 bg-gradient-to-t from-deep-navy to-transparent opacity-80" />
+          <div className="absolute inset-0 z-0">
+            <Image src="/images/dynamic_footer.jpg" alt="Footer Background" fill className="object-cover opacity-20 mix-blend-luminosity" />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/80 to-transparent z-0" />
           <FadeUp className="relative z-10">
             <h2 className="font-display font-light text-white text-4xl sm:text-6xl mb-12 max-w-3xl mx-auto leading-tight">
               {tc('heading')}
