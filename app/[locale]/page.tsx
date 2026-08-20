@@ -2,18 +2,18 @@ import { useTranslations } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-import { Bot, MessageSquare, Database, Globe, PenTool, GraduationCap, ArrowRight } from 'lucide-react'
+import { Bot, Workflow, Cloud, Target, Code2, Globe, ArrowRight } from 'lucide-react'
 import { FadeUp } from '@/components/FadeUp'
 import { HeroSection } from '@/components/ui/HeroSection'
 
-const serviceKeys = ['agents', 'chatbots', 'crm', 'websites', 'content', 'learning'] as const
+const serviceKeys = ['strategy', 'agents', 'automation', 'cloud', 'webapps', 'custom'] as const
 const serviceIcons: Record<(typeof serviceKeys)[number], React.ElementType> = {
+  strategy: Target,
   agents: Bot,
-  chatbots: MessageSquare,
-  crm: Database,
-  websites: Globe,
-  content: PenTool,
-  learning: GraduationCap,
+  automation: Workflow,
+  cloud: Cloud,
+  webapps: Globe,
+  custom: Code2,
 }
 
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
