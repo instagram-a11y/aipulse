@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing'
 import { cormorant, inter, farsi } from '@/lib/fonts'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
+import { ConsultationChatbot } from '@/components/ui/ConsultationChatbot'
 import '../globals.css'
 
 export function generateStaticParams() {
@@ -59,6 +60,7 @@ export default async function LocaleLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <ConsultationChatbot isRtl={locale === 'fa'} />
         </NextIntlClientProvider>
       </body>
     </html>
