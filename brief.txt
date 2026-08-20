@@ -1,0 +1,317 @@
+AI
+PULSE
+AIPULSE.CA
+Bilingual Website Strategy, Content & Build Brief
+استراتژی، محتوای دوزبانه و بریف کامل طراحی وب‌سایت
+AI consulting and custom automation for modern businesses.
+مشاوره هوش مصنوعی و ساخت راهکارهای اختصاصی برای کسب‌وکارهای مدرن
+Prepared for Claude Code implementation Brand direction: premium, clear, trustworthy, results-driven Markets: Iran + international | Languages: Persian + English
+
+1. Executive Direction | جهت کلی برند
+AIPulse helps organizations identify expensive friction, replace repetitive work with intelligent systems, and launch measurable AI solutions—quickly and responsibly.
+AIPulse به سازمان‌ها کمک می‌کند کارهای تکراری و پرهزینه را شناسایی کنند، آن‌ها را با سیستم‌های هوشمند جایگزین کنند و در کوتاه‌ترین زمان راه‌حل‌های AI قابل‌اندازه‌گیری بسازند.
+Core positioning | جایگاه برند
+Not an “AI tools” website. AIPulse is a diagnosis-to-deployment partner: discover the business problem, design the solution, build it, integrate it, train the team, and improve it with data.
+این وب‌سایت نباید شبیه فروشگاه ابزارهای AI باشد. AIPulse شریک «از تشخیص تا اجرا» است: مشکل را پیدا می‌کند، راه‌حل را طراحی و پیاده‌سازی می‌کند، به سیستم‌های شرکت متصل می‌کند، آموزش می‌دهد و بر اساس داده بهبود می‌دهد.
+Brand promise
+English
+فارسی
+Speed
+From bottleneck to working prototype in days—not months.
+از گلوگاه تا نمونه قابل‌استفاده در چند روز، نه چند ماه.
+Fit
+Solutions designed around the client’s workflow and data.
+راه‌حل متناسب با فرایند و داده واقعی هر کسب‌وکار.
+Impact
+Save time, reduce errors, improve service and unlock growth.
+صرفه‌جویی در زمان، کاهش خطا، بهبود خدمات و ایجاد رشد.
+Trust
+Human oversight, privacy-minded design and clear reporting.
+نظارت انسانی، توجه به حریم خصوصی و گزارش‌دهی شفاف.
+
+Recommended tagline | شعار پیشنهادی
+Turn Repetition Into Intelligence.
+تکرار را به هوشمندی تبدیل کنید.
+Existing brand line to retain: Your vision, our intelligence, one pulse.
+شعار فعلی برند که بهتر است حفظ شود: چشم‌انداز شما، هوشمندی ما، یک نبض.
+2. Target Audiences | مخاطبان هدف
+Small and mid-sized businesses that need practical automation without building an internal AI team.
+Larger organizations seeking a fast pilot before enterprise rollout.
+Founders and operators who know where time is wasted but do not know which AI solution fits.
+Iranian businesses needing Persian-first solutions and international firms needing bilingual workflows.
+کسب‌وکارهایی که کار تکراری، پاسخ‌گویی کند، داده پراکنده یا هزینه نیروی انسانی بالا دارند.
+3. Information Architecture | ساختار سایت
+Page / Route
+Purpose
+Key content
+Home / خانه
+Convert attention into a discovery call
+Hero, outcomes, capabilities, industries, process, proof, founder, CTA
+Solutions / راهکارها
+Explain what Pulse AI can build
+AI agents, chatbots, CRM, dynamic sites, content systems, training, analytics
+Industries / صنایع
+Make relevance immediate
+Dedicated use cases by sector; filterable cards
+Case Studies / نمونه‌کارها
+Build trust with measurable proof
+Challenge → solution → integration → result
+AI Opportunity Audit
+Capture qualified leads
+Short diagnostic questionnaire + score + booking
+About / درباره ما
+Humanize the brand
+Founder portrait, point of view, delivery principles
+Insights / دانش‌نامه
+SEO and authority
+Bilingual articles, guides, demos and downloadable checklists
+Contact / تماس
+Make the next step easy
+Form, WhatsApp/email, booking, location/time zone
+Privacy / Terms
+Trust and compliance
+Data handling, consent and service terms
+
+4. Homepage Blueprint & Exact Copy | طراحی صفحه اصلی و متن‌ها
+A. Navigation
+Logo | Solutions | Industries | Case Studies | Insights | About | Contact | [Book an AI Discovery Call]
+لوگو | راهکارها | صنایع | نمونه‌کارها | دانش‌نامه | درباره ما | تماس | [رزرو جلسه بررسی AI]
+B. Hero — first screen
+Eyebrow: AI Consulting • Automation • Custom Agents
+عنوان کوچک: مشاوره AI • اتوماسیون • ایجنت‌های اختصاصی
+Headline: Turn Repetitive Work Into Intelligent Growth.
+تیتر اصلی: کارهای تکراری را به رشد هوشمند تبدیل کنید.
+Subheadline: We uncover the bottlenecks slowing your business down, then design and deploy AI systems that save time, reduce cost, improve customer experience and scale with you.
+زیرتیتر: ما گلوگاه‌هایی را که سرعت کسب‌وکار شما را کم کرده‌اند شناسایی می‌کنیم و سپس سیستم‌های AI می‌سازیم که در زمان و هزینه صرفه‌جویی می‌کنند، تجربه مشتری را بهبود می‌دهند و همراه شما رشد می‌کنند.
+Primary CTA: Book a Free AI Opportunity Call | Secondary CTA: Explore Solutions
+دکمه اصلی: رزرو جلسه رایگان بررسی فرصت‌های AI | دکمه دوم: مشاهده راهکارها
+Hero visual direction: premium founder portrait on the right, layered with subtle animated workflow nodes, a “time saved / leads handled / tasks automated” dashboard card, and a soft gold pulse line. Avoid cliché robots and glowing brains.
+C. Trust strip
+Strategy → Prototype → Integration → Training → Optimization
+استراتژی ← نمونه اولیه ← اتصال به سیستم‌ها ← آموزش ← بهینه‌سازی
+D. Problem recognition
+Headline: If it repeats, delays, or depends on one person, it can probably be redesigned.
+تیتر: اگر کاری تکرار می‌شود، تأخیر ایجاد می‌کند یا فقط به یک نفر وابسته است، احتمالاً می‌توان آن را هوشمندتر طراحی کرد.
+Customer questions answered manually every day
+Leads scattered across messages, sheets and inboxes
+Appointments, reminders and follow-ups handled by hand
+Content creation that stops when the team gets busy
+Training that cannot adapt to each learner
+Reports assembled from disconnected systems
+E. Solution cards
+Solution
+One-line website copy
+AI Agents
+Digital teammates that research, decide, draft, update and complete approved tasks.
+Smart Chatbots
+Bilingual customer support and lead qualification across website and messaging channels.
+Custom CRM
+One source of truth for leads, tasks, follow-ups, documents and performance.
+Dynamic Websites
+Pages, listings, prices, availability and content that update from live data.
+AI Content Engine
+Brand-safe ideas, captions, visuals, scheduling and performance learning.
+Adaptive Learning
+Practice that responds to each learner and unlocks the next level only after mastery.
+Booking Automation
+Availability, intake, reminders, rescheduling and no-show reduction.
+Analytics & Forecasting
+Turn operational data into alerts, trends and next-best actions.
+
+F. Process
+1 Discover — 2 Prioritize — 3 Prototype — 4 Integrate — 5 Train — 6 Optimize
+۱ کشف نیاز — ۲ اولویت‌بندی — ۳ ساخت نمونه — ۴ یکپارچه‌سازی — ۵ آموزش — ۶ بهینه‌سازی
+Start small. Prove value. Scale what works.
+کوچک شروع می‌کنیم، ارزش را ثابت می‌کنیم و راه‌حل موفق را توسعه می‌دهیم.
+G. Outcome metrics
+Show real metrics when available: hours saved per week, response time, cost per lead, conversion rate, error reduction, content output, learner completion and customer satisfaction.
+پس از اجرای پروژه، شاخص‌های واقعی نمایش داده شوند: ساعات صرفه‌جویی‌شده، زمان پاسخ‌گویی، هزینه هر لید، نرخ تبدیل، کاهش خطا، حجم تولید محتوا، تکمیل آموزش و رضایت مشتری.
+H. Founder section
+Headline: Practical AI, guided by business reality.
+تیتر: هوش مصنوعی کاربردی، بر پایه واقعیت کسب‌وکار.
+Founder copy: “I created AIPulse to close the gap between what AI promises and what businesses can actually use. We begin with your daily reality, not with a tool—and build only what creates measurable value.” — Milad Momtaz Azad, Founder & Managing Director
+متن مدیر: «AIPulse را ایجاد کردم تا فاصله میان وعده‌های هوش مصنوعی و چیزی که کسب‌وکارها واقعاً می‌توانند استفاده کنند کمتر شود. ما از واقعیت روزانه شما شروع می‌کنیم، نه از یک ابزار؛ و فقط چیزی را می‌سازیم که ارزش قابل‌اندازه‌گیری ایجاد کند.» — میلاد ممتاز آزاد، بنیان‌گذار و مدیر مجموعه
+Use a refined half-body portrait in a dark navy suit or smart business-casual look, neutral light background, direct eye contact, natural editing. Add LinkedIn and a short credentials line only after final approval.
+I. Final CTA
+Headline: What could your business stop doing manually this month?
+تیتر: کسب‌وکار شما همین ماه چه کاری را می‌تواند دیگر به‌صورت دستی انجام ندهد؟
+CTA: Find My Best AI Opportunity
+دکمه: بهترین فرصت AI کسب‌وکارم را پیدا کن
+5. Industries & High-Value Use Cases | صنایع و کاربردها
+Industry
+Problems to target
+AI solutions Pulse AI can offer
+Real Estate
+Lead follow-up, listing updates, document search, content
+Lead agent; dynamic listings; property Q&A; CMA assistant; offer/status workflow; social engine
+Clinics & Dental
+Intake, reminders, repetitive questions, missed calls
+Booking agent; multilingual intake; FAQ assistant; post-visit follow-up; review requests
+Beauty & Salons
+Scheduling, no-shows, repeat clients, promotions
+Smart booking; reminders; service recommender; reactivation campaigns; loyalty CRM
+Retail & E-commerce
+Product questions, abandoned carts, catalog content
+Shopping assistant; product copy; recommendation engine; inventory alerts; support bot
+Jewelry & Luxury
+High-touch sales, custom orders, product education
+Concierge chatbot; design configurator; quote workflow; clienteling CRM; content studio
+Education
+One-size-fits-all practice, grading, progress visibility
+Mastery learning; adaptive exercises; tutor agent; auto-feedback; parent/teacher dashboards
+Legal & Accounting
+Document intake, repetitive drafting, deadlines
+Intake and triage; document extraction; checklist agent; deadline reminders; knowledge search
+Manufacturing
+Manual reporting, downtime, inventory, quality issues
+Production dashboard; anomaly alerts; SOP assistant; predictive maintenance; demand planning
+Logistics
+Status inquiries, dispatch, documents, route changes
+Tracking assistant; dispatch workflow; document extraction; route/exception alerts
+Hospitality
+Bookings, guest questions, reviews, upsells
+Guest concierge; booking support; multilingual FAQ; upsell agent; review response
+Construction
+Site reports, estimates, changes, safety paperwork
+Daily report agent; estimate assistant; change-order workflow; searchable project knowledge
+Professional Services
+Proposals, research, onboarding, reporting
+Proposal agent; research workflow; onboarding portal; meeting/action assistant; reporting automation
+Restaurants
+Reservations, menu questions, staffing, feedback
+Reservation assistant; menu Q&A; demand forecast; feedback analysis; campaign engine
+HR & Recruitment
+Screening, onboarding, policy questions
+Candidate intake; interview scheduling; onboarding guide; policy assistant; training paths
+
+6. Productized Offers | بسته‌های قابل‌فروش
+Offer
+What the client receives
+Commercial goal
+AI Opportunity Audit
+Workflow interview, automation map, impact/effort score, 90-day roadmap
+Low-friction entry offer; free teaser + paid deep audit
+10-Day Prototype Sprint
+One focused working prototype with demo and success criteria
+Convert strategy into visible proof quickly
+AI Agent Launch
+Custom agent, knowledge base, guardrails, integrations, training
+Core implementation engagement
+Automation Operating System
+CRM/workflows/dashboard/agents in one connected system
+Larger transformation project
+AI Content Studio
+Brand voice, prompt system, content pipeline, approvals, analytics
+Monthly retainer
+AI Care Plan
+Monitoring, updates, prompt/model tuning, support and reporting
+Recurring revenue and long-term performance
+
+Do not publish fixed prices at launch unless delivery scope is standardized. Use “Starting from” only after costs are validated. Offer a free 20-minute discovery call and a paid diagnostic for complex organizations.
+7. Lead-Generation Experience | مسیر جذب مشتری
+Interactive AI Opportunity Audit
+A 7–10 question diagnostic that gives the visitor a personalized result and collects a qualified lead.
+یک ارزیابی ۷ تا ۱۰ سؤالی که نتیجه شخصی‌سازی‌شده ارائه می‌دهد و هم‌زمان لید باکیفیت ایجاد می‌کند.
+Industry, company size and country
+Most repetitive workflow
+Monthly volume and hours spent
+Current tools: CRM, website, WhatsApp, email, spreadsheets, ERP
+Main goal: cost, speed, sales, service, compliance or training
+Data sensitivity and human approval needs
+Desired timeline and budget range
+Result screen example: “Your strongest first AI opportunity is Lead Follow-Up Automation. Estimated impact: High. Complexity: Medium. Recommended next step: 20-minute solution mapping call.”
+نمونه نتیجه: «بهترین فرصت اولیه AI برای شما، اتوماسیون پیگیری لیدهاست. اثر احتمالی: بالا. پیچیدگی: متوسط. قدم پیشنهادی: جلسه ۲۰ دقیقه‌ای طراحی راه‌حل.»
+Conversion rules
+Primary conversion: booked discovery call.
+Secondary conversions: audit completion, WhatsApp click, case-study download, newsletter signup.
+Use separate WhatsApp/contact routes for Iran and international visitors if operations require it.
+Connect forms to CRM with source, language, industry, score, consent and campaign fields.
+8. Visual System | سیستم بصری
+Element
+Specification
+Palette
+White #FFFFFF; Deep Navy #071A2E; Ink Navy #102A43; Gold #C6A15B; Mist #F3F6F8; Slate #607080
+Typography
+English: Manrope or Inter. Persian: Peyda, Yekan Bakh or Vazirmatn. Use licensed webfonts and robust fallbacks.
+Style
+Luxury-tech, confident, spacious, editorial. Rounded cards 18–24px; thin borders; soft shadows; strong type hierarchy.
+Photography
+Real founder and real business environments. Warm neutral light. Avoid humanoid robots, neon brains and generic handshake stock.
+Motion
+Subtle pulse line, node connections, card reveal and number count-up. Respect reduced-motion settings.
+Icons
+Consistent line icons with restrained gold accents; no mixed icon families.
+RTL/LTR
+True layout mirroring, not only text alignment. Navigation, arrows, forms and carousels must reverse correctly.
+Logo idea
+A clean wordmark: PULSE in navy, AI in gold; optional pulse/node symbol suitable for favicon and app icon.
+
+Homepage composition
+Wide desktop canvas with generous whitespace; max content width 1200–1280px.
+Hero may use a split 55/45 composition; on mobile, copy first and portrait/visual second.
+Alternate white and very light mist sections; reserve navy background for proof, CTA and footer moments.
+Use gold sparingly: CTA highlights, section labels, active states and data accents—not large body text.
+9. Functional & Technical Requirements for Claude Code
+Recommended stack: Next.js 15+ App Router, TypeScript, Tailwind CSS, shadcn/ui primitives where appropriate, Framer Motion for restrained interactions.
+Internationalization: /en and /fa routes; locale switch preserves the current page; Persian uses dir="rtl" and English dir="ltr" at document level.
+CMS: Sanity, Payload or Strapi for services, industries, case studies, articles, team and FAQs. Choose one and document the schema.
+Forms: server-side validation, spam protection, consent checkbox, CRM/webhook integration, email notification and success state.
+Booking: Calendly/Cal.com integration or a custom calendar handoff; display times in the visitor’s time zone.
+Analytics: GA4 + Search Console + event tracking for CTA, audit start/complete, form submit, WhatsApp, language and case-study views.
+SEO: localized metadata, canonical/hreflang, Open Graph, sitemap, robots, Organization/Service/FAQ schema and clean slugs.
+Performance: optimized responsive images, next/font, lazy loading, minimal client JS, Core Web Vitals target “Good”.
+Accessibility: WCAG 2.2 AA contrast, keyboard navigation, visible focus, semantic headings, labels, error announcements and reduced motion.
+Security/privacy: collect minimum data, keep secrets server-side, sanitize inputs, rate-limit endpoints, define retention and do not send confidential client data to AI models without explicit controls.
+Architecture: reusable bilingual content objects/components; no English strings hard-coded into shared UI components.
+10. Suggested CMS Content Model | مدل محتوایی
+Collection
+Important fields
+Service
+slug, title_en/fa, summary_en/fa, benefits, features, process, related industries, CTA, SEO
+Industry
+slug, name_en/fa, pains, solutions, example workflows, related case studies, FAQs, SEO
+Case Study
+client/anonymous label, challenge, solution, integrations, timeline, metrics, quote, media, language
+Insight
+title, excerpt, body, author, category, tags, publish date, locale, SEO
+FAQ
+question_en/fa, answer_en/fa, category, order
+Team
+name, role_en/fa, bio_en/fa, portrait, LinkedIn
+Lead/Audit
+language, industry, answers, score, recommendation, contact, consent, UTM, status
+
+11. Claude Code Master Prompt | پرامپت آماده
+Copy the following instruction into Claude Code together with this DOCX:
+Create a completely new, production-quality bilingual website for the AI consultant and implementation brand “AIPulse” at https://www.aipulse.ca/en, using the attached strategy brief as the single source of truth. From the current website, reuse ONLY the established AIPulse name, domain, current logo asset, English/Persian capability and—if visually suitable—the line “Your vision, our intelligence, one pulse.” Do NOT reuse or imitate the existing site’s layout, styling, section structure, copy, service descriptions, imagery or overall simplicity. This is a ground-up luxury redesign for a high-end AI consultant led by founder Milad Momtaz Azad.  The result must feel bespoke, cinematic and internationally credible—not like a generic SaaS or agency template. Use Next.js App Router, TypeScript and Tailwind CSS. Create English and Persian routes with true LTR/RTL mirroring, locale-aware metadata and a persistent language switcher. Implement the complete homepage first, then Solutions, Industries, Case Studies, About, Insights, AI Opportunity Audit, Contact, Privacy and Terms. Preserve useful URL paths such as /en/about, /en/services, /en/book and their /fa equivalents only through matching new pages or redirects; do not preserve their old design/content by default.  Apply the visual system exactly: white, deep navy and restrained gold; editorial typography; generous negative space; carefully layered sections; premium founder photography; refined data/workflow visuals; smooth but subtle pulse/data-flow motion; exceptional mobile behavior. The founder must appear as a credible strategic advisor, not as a generic team-card profile. Include a premium hero portrait placeholder with exact replacement/crop instructions. Do not use robot, brain, circuit-face, handshake or neon-tech clichés.  Use reusable components and typed content models. Keep all bilingual copy in structured locale files or CMS-ready objects. Create realistic placeholder case studies labeled clearly as “Illustrative Example” until real metrics are supplied. Add validated lead forms, consent, loading/error/success states, event hooks, SEO schema, sitemap, hreflang, accessibility and performance best practices. The AI Opportunity Audit must calculate a simple impact/complexity result from 7–10 questions and end in a discovery-call CTA.  Before completion, audit the current repository only to locate the logo, domain configuration, integrations and deployment settings. Preserve working infrastructure where useful, but treat all visual and content decisions as new. Run lint, typecheck and production build; fix all errors. Provide a README with setup, environment variables, content editing, deployment, redirects, analytics events, form integration and how to replace the founder portrait and contact details. Do not invent client logos, awards, testimonials, credentials or business addresses.
+12. Launch Content Checklist | اطلاعات لازم قبل از انتشار
+Final logo and favicon
+Professional founder portrait (vertical + square + wide crop)
+Founder name/title, approved short bio and LinkedIn URL
+Phone, email, WhatsApp, office address (if public), service countries and time zone
+Real services offered at launch and delivery capacity
+At least 2–3 real or anonymized case studies; never fabricate results
+Privacy policy/terms reviewed for target markets
+CRM, booking, analytics and email credentials
+Persian and English proofread by a native speaker
+Approved photo/video library and image usage rights
+Recommended launch phases | مراحل پیشنهادی
+Phase
+Scope
+Phase 1 — Conversion MVP
+Home, Solutions, 6 priority Industries, About, Audit, Contact, bilingual SEO and CRM capture
+Phase 2 — Authority
+Case studies, Insights, downloadable guides, newsletter and richer industry pages
+Phase 3 — Product Experience
+Live demos, client portal, proposal generator, deeper CRM automation and personalized recommendations
+
+13. Strategic Recommendations | پیشنهادهای نهایی
+Lead with business outcomes, not model names. Clients buy saved time, higher conversion and better service—not “GPT” itself.
+Choose 4–6 priority industries for the first launch. Keep the full industry library, but do not dilute the homepage.
+Use an “AI Opportunity Audit” as the main lead magnet; it demonstrates the method before the sales call.
+Publish small interactive demos: lead-response simulator, adaptive-learning sample and appointment assistant. Demos convert better than abstract claims.
+Create separate landing pages for Iran and international campaigns when offers, currency, contact channels or compliance differ.
+Do not promise replacing people. Position Pulse AI as removing low-value work, increasing capacity and keeping human approval where judgment matters.
+Every case study should show baseline, implementation, human controls and measurable outcome. Trust will be the strongest differentiator.
+Final brand idea: AIPulse gives every business an intelligent operating pulse—connected, responsive and continuously improving.
+ایده نهایی برند: AIPulse به هر کسب‌وکار یک نبض عملیاتی هوشمند می‌دهد؛ متصل، پاسخ‌گو و در حال بهبود مستمر.

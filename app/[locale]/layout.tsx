@@ -54,7 +54,7 @@ export default async function LocaleLayout({
       dir={dir}
       className={`${cormorant.variable} ${inter.variable} ${farsi.variable}`}
     >
-      <body className="bg-cream text-ink antialiased font-sans">
+      <body className="bg-white text-deep-navy antialiased font-sans">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main>{children}</main>

@@ -17,7 +17,7 @@ export function Footer() {
   ] as const
 
   return (
-    <footer className="bg-navy border-t border-gold/20">
+    <footer className="bg-deep-navy border-t border-gold/20">
       <div className="max-w-6xl mx-auto px-6 py-20">
         {/* Brand block */}
         <div className="flex flex-col items-center text-center gap-6 mb-16">
@@ -37,7 +37,7 @@ export function Footer() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-silver hover:text-gold text-xs tracking-widest uppercase transition-colors"
+              className="text-slate hover:text-gold text-xs tracking-widest uppercase transition-colors"
             >
               {l.label}
             </Link>
@@ -48,18 +48,18 @@ export function Footer() {
         <div className="flex flex-wrap justify-center items-center gap-6 mb-12">
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="flex items-center gap-2 text-silver hover:text-gold text-xs tracking-wide transition-colors"
+            className="flex items-center gap-2 text-slate hover:text-gold text-xs tracking-wide transition-colors"
             aria-label="Email AIPulse"
           >
             <Mail className="w-3.5 h-3.5" aria-hidden="true" />
             {CONTACT_EMAIL}
           </a>
-          <span className="text-silver/20 text-xs" aria-hidden="true">|</span>
+          <span className="text-slate/20 text-xs" aria-hidden="true">|</span>
           <a
             href="https://linkedin.com/company/aipulse"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-silver hover:text-gold text-xs tracking-widest uppercase transition-colors"
+            className="text-slate hover:text-gold text-xs tracking-widest uppercase transition-colors"
             aria-label="AIPulse on LinkedIn"
           >
             LinkedIn

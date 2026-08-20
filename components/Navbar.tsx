@@ -35,7 +35,7 @@ export function Navbar() {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-navy/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-deep-navy/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -57,7 +57,7 @@ export function Navbar() {
                              after:absolute after:bottom-0 after:left-0 after:h-px after:bg-gold after:transition-all
                              ${isActive
                                ? 'text-gold after:w-full'
-                               : 'text-silver hover:text-gold after:w-0 hover:after:w-full'
+                               : 'text-slate hover:text-gold after:w-0 hover:after:w-full'
                              }`}
               >
                 {link.label}
@@ -71,7 +71,7 @@ export function Navbar() {
           {/* Sign in */}
           <Link
             href="/login"
-            className="hidden sm:inline text-xs tracking-widest text-silver hover:text-gold transition-colors"
+            className="hidden sm:inline text-xs tracking-widest text-slate hover:text-gold transition-colors"
           >
             {t('login')}
           </Link>
@@ -79,8 +79,8 @@ export function Navbar() {
           {/* Language toggle */}
           <button
             onClick={toggleLocale}
-            className="text-xs tracking-widest text-silver hover:text-gold transition-colors border
-                       border-silver/30 hover:border-gold/50 px-3 py-1.5 rounded-none"
+            className="text-xs tracking-widest text-slate hover:text-gold transition-colors border
+                       border-slate/30 hover:border-gold/50 px-3 py-1.5 rounded-none"
           >
             {locale === 'en' ? 'فا' : 'EN'}
           </button>
@@ -89,7 +89,7 @@ export function Navbar() {
           <Link
             href="/book"
             className="hidden lg:inline-flex items-center gap-2 border border-gold text-white
-                       text-xs tracking-widest uppercase px-5 py-2.5 hover:bg-gold hover:text-navy
+                       text-xs tracking-widest uppercase px-5 py-2.5 hover:bg-gold hover:text-deep-navy
                        transition-all duration-300"
           >
             {t('cta')}
@@ -113,7 +113,7 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden bg-navy border-t border-navy-soft px-6 py-8 flex flex-col gap-6"
+          className="lg:hidden bg-deep-navy border-t border-ink-navy px-6 py-8 flex flex-col gap-6"
         >
           {navLinks.map((link) => {
             const isActive = pathname === link.href
@@ -122,7 +122,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`text-lg font-display font-light transition-colors ${
-                  isActive ? 'text-gold' : 'text-silver hover:text-gold'
+                  isActive ? 'text-gold' : 'text-slate hover:text-gold'
                 }`}
                 onClick={() => setMenuOpen(false)}
               >
@@ -132,7 +132,7 @@ export function Navbar() {
           })}
           <Link
             href="/login"
-            className="text-silver hover:text-gold text-lg font-display font-light"
+            className="text-slate hover:text-gold text-lg font-display font-light"
             onClick={() => setMenuOpen(false)}
           >
             {t('login')}
@@ -140,7 +140,7 @@ export function Navbar() {
           <Link
             href="/book"
             className="border border-gold text-white text-xs tracking-widest uppercase
-                       px-5 py-3 text-center hover:bg-gold hover:text-navy transition-all mt-4"
+                       px-5 py-3 text-center hover:bg-gold hover:text-deep-navy transition-all mt-4"
             onClick={() => setMenuOpen(false)}
           >
             {t('cta')}

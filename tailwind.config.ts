@@ -5,19 +5,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: '#0B1622',
-          mid: '#111F2E',
-          soft: '#1A2E42',
-        },
-        gold: {
-          DEFAULT: '#C9A84C',
-          light: '#E8D08A',
-          pale: '#F5EDD0',
-        },
-        cream: '#F8F7F3',
-        silver: '#A8B4C0',
-        ink: '#1A2535',
+        white: '#FFFFFF',
+        'deep-navy': '#071A2E',
+        'ink-navy': '#102A43',
+        gold: '#C6A15B',
+        mist: '#F3F6F8',
+        slate: '#607080',
       },
       fontFamily: {
         display: ['var(--font-cormorant)', 'Georgia', 'serif'],

@@ -1,62 +1,105 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About",
-    "services": "Services",
-    "book": "Book",
+    "about": "About Us",
+    "services": "Solutions",
+    "book": "AI Audit",
     "contact": "Contact",
     "dashboard": "Dashboard",
     "login": "Sign in",
     "cta": "Book a Call"
   },
   "hero": {
-    "label": "AI Consulting · Canada",
-    "line1": "Your vision, our",
-    "line2": "intelligence,",
-    "line3": "one pulse.",
-    "tagline": "Your vision, our intelligence, one pulse.",
-    "cta_primary": "Book a Consultation",
-    "cta_secondary": "Our Services",
-    "scroll": "Scroll"
+    "label": "AI Consulting • Automation • Custom Agents",
+    "line1": "Turn Repetitive Work",
+    "line2": "Into Intelligent Growth.",
+    "line3": "We build custom AI agents, automation, CRM systems, dynamic websites and intelligent workflows that scale with your enterprise.",
+    "tagline": "Turn Repetitive Work Into Intelligent Growth.",
+    "cta_primary": "Book a Free AI Opportunity Call",
+    "cta_secondary": "Explore Solutions",
+    "scroll": "Scroll",
+    "title_part1": "Diagnosing business problems.",
+    "title_part2": "Building bespoke AI systems."
   },
   "intro": {
-    "line": "We don't sell software. We engineer intelligence."
+    "line": "Turn Repetition Into Intelligence."
+  },
+  "problem": {
+    "heading": "If it repeats, delays, or depends on one person, it can probably be redesigned.",
+    "sub": "We uncover the bottlenecks slowing your business down, then design and deploy AI systems that save time, reduce cost, and improve experience.",
+    "items": {
+      "support": "Customer questions answered manually every day",
+      "leads": "Leads scattered across messages, sheets and inboxes",
+      "calendar": "Appointments, reminders and follow-ups handled by hand",
+      "content": "Content creation that stops when the team gets busy",
+      "training": "Training that cannot adapt to each learner",
+      "reports": "Reports assembled from disconnected systems"
+    }
   },
   "services": {
-    "label": "What we offer",
-    "heading": "What we build for you",
+    "label": "What we build for you",
+    "heading": "Solutions designed around your workflow and data",
     "items": {
       "agents": {
         "title": "AI Agents",
-        "body": "Autonomous agents trained on your data, deployed in your environment."
+        "body": "Digital teammates that research, decide, draft, update and complete approved tasks."
       },
-      "automation": {
-        "title": "Workflow Automation",
-        "body": "End-to-end automation of your business processes, start to finish."
+      "chatbots": {
+        "title": "Smart Chatbots",
+        "body": "Bilingual customer support and lead qualification across website and messaging channels."
       },
-      "webapps": {
-        "title": "AI Web Applications",
-        "body": "Intelligent web apps with smart search, recommendations, and chat built in."
+      "crm": {
+        "title": "Custom CRM",
+        "body": "One source of truth for leads, tasks, follow-ups, documents and performance."
       },
-      "cloud": {
-        "title": "Cloud Solutions",
-        "body": "Scalable, secure infrastructure for AI workloads and ongoing optimization."
+      "websites": {
+        "title": "Dynamic Websites",
+        "body": "Pages, listings, prices, availability and content that update from live data."
       },
-      "strategy": {
-        "title": "AI Strategy",
-        "body": "Discovery sessions and roadmaps that find where AI creates real value."
+      "content": {
+        "title": "AI Content Engine",
+        "body": "Brand-safe ideas, captions, visuals, scheduling and performance learning."
       },
-      "custom": {
-        "title": "Custom Applications",
-        "body": "Mobile and desktop applications with AI capabilities, concept to launch."
+      "learning": {
+        "title": "Adaptive Learning",
+        "body": "Practice that responds to each learner and unlocks the next level only after mastery."
+      },
+      "booking": {
+        "title": "Booking Automation",
+        "body": "Availability, intake, reminders, rescheduling and no-show reduction."
+      },
+      "analytics": {
+        "title": "Analytics & Forecasting",
+        "body": "Turn operational data into alerts, trends and next-best actions."
       }
     },
     "process_heading": "How we work",
+    "process_sub": "Start small. Prove value. Scale what works.",
     "process": {
-      "discovery": { "title": "Discovery", "body": "We listen to your operations, team, and goals." },
-      "design": { "title": "Design", "body": "We architect a solution built precisely for you." },
-      "build": { "title": "Build", "body": "We engineer it from scratch, no templates." },
-      "deploy": { "title": "Deploy", "body": "We launch, monitor, and stay engaged beyond." }
+      "discover": {
+        "title": "1 Discover",
+        "body": "We listen to your operations, team, and goals."
+      },
+      "prioritize": {
+        "title": "2 Prioritize",
+        "body": "We prioritize high-impact opportunities first."
+      },
+      "prototype": {
+        "title": "3 Prototype",
+        "body": "We build a working prototype in days, not months."
+      },
+      "integrate": {
+        "title": "4 Integrate",
+        "body": "We connect it to your current systems securely."
+      },
+      "train": {
+        "title": "5 Train",
+        "body": "We train your team to ensure successful adoption."
+      },
+      "optimize": {
+        "title": "6 Optimize",
+        "body": "We monitor performance and improve with data."
+      }
     },
     "pricing_note": "Every project is scoped and priced custom — no off-the-shelf plans.",
     "usecases": "Use cases"
@@ -64,94 +107,107 @@
   "why": {
     "label": "Why AIPulse",
     "heading": "Why work with us",
-    "custom": { "title": "Custom, not generic", "body": "Every solution is built from scratch for your business." },
-    "discovery": { "title": "Discovery first", "body": "We listen before we propose or build anything." },
-    "partnership": { "title": "Long-term partnership", "body": "We stay with you well beyond launch." }
+    "custom": {
+      "title": "Custom, not generic",
+      "body": "Every solution is built from scratch for your business."
+    },
+    "discovery": {
+      "title": "Discovery first",
+      "body": "We listen before we propose or build anything."
+    },
+    "partnership": {
+      "title": "Long-term partnership",
+      "body": "We stay with you well beyond launch."
+    }
   },
   "team": {
-    "label": "The team",
-    "heading": "Built by a team, for your team.",
-    "title": "Strategists, engineers & designers — Canada",
-    "bio": "AIPulse is not a one-person shop. We're a team of AI strategists, engineers, and designers who partner with you end to end — from the first discovery session to long after launch. Different specialists, one shared standard: intelligence engineered precisely for your business.",
-    "link": "Meet AIPulse"
+    "label": "The founder",
+    "heading": "Practical AI, guided by business reality.",
+    "title": "Founder & Managing Director",
+    "bio": "\"I created AIPulse to close the gap between what AI promises and what businesses can actually use. We begin with your daily reality, not with a tool—and build only what creates measurable value.\"",
+    "link": "Learn more about us",
+    "name": "Golnaz Resalei"
   },
   "homeCta": {
-    "heading": "Ready to build your intelligent future?",
-    "button": "Book a Consultation"
+    "heading": "What could your business stop doing manually this month?",
+    "button": "Find My Best AI Opportunity"
   },
   "about": {
-    "label": "About AIPulse",
+    "label": "About Us",
     "hero_title": "Built on precision. Driven by partnership.",
     "story_label": "Our Story",
     "story_heading": "The intelligence your business deserves.",
-    "story_p1": "AIPulse was founded in Canada with a single conviction: every business deserves AI that is engineered for it — not adapted from a generic template.",
+    "story_p1": "AIPulse was founded with a single conviction: every business deserves AI that is engineered for it — not adapted from a generic template.",
     "story_p2": "Every engagement begins with a discovery session. We ask about your operations, your team, your goals, and the gaps between where you are and where you want to be. Only then do we design and build.",
     "story_p3": "The result is an AI system that fits your business precisely — and a partnership that continues long after launch.",
     "values_label": "What we stand for",
     "values": {
-      "precision": { "title": "Precision", "body": "We engineer, not approximate. Every detail is intentional." },
-      "custom": { "title": "Custom-built", "body": "No templates. No recycled logic. Built for you, only." },
-      "partnership": { "title": "Partnership", "body": "We stay engaged well beyond the initial delivery." },
-      "longterm": { "title": "Long-term", "body": "We measure success in your growth, not project completions." }
+      "precision": {
+        "title": "Precision",
+        "body": "We engineer, not approximate. Every detail is intentional."
+      },
+      "custom": {
+        "title": "Custom-built",
+        "body": "No templates. No recycled logic. Built for you, only."
+      },
+      "partnership": {
+        "title": "Partnership",
+        "body": "We stay engaged well beyond the initial delivery."
+      },
+      "longterm": {
+        "title": "Long-term",
+        "body": "We measure success in your growth, not project completions."
+      }
     },
     "facts": {
-      "founded": { "value": "2024", "label": "Year founded" },
-      "hq": { "value": "Canada", "label": "Headquarters" },
-      "expertise": { "value": "AI + Cloud", "label": "Core expertise" }
+      "founded": {
+        "value": "2024",
+        "label": "Year founded"
+      },
+      "hq": {
+        "value": "Canada",
+        "label": "Headquarters"
+      },
+      "expertise": {
+        "value": "AI + Cloud",
+        "label": "Core expertise"
+      }
     },
     "cta_heading": "Let's talk about your business",
     "cta_button": "Book a Consultation"
   },
-  "book": {
-    "label": "Get started",
-    "heading": "Book a Consultation",
-    "sub": "Reserve a paid one-on-one session. Choose a time that works for you.",
-    "step_type": "Choose a session",
-    "step_time": "Pick a time",
-    "step_confirm": "Confirm & pay",
-    "duration": "{minutes} min",
-    "price": "{price}",
-    "select": "Select",
-    "no_slots": "No open times in this range. Try another day.",
-    "loading_slots": "Loading available times…",
-    "signin_required": "Please sign in to book a session.",
-    "proceed_payment": "Proceed to payment",
-    "expect_heading": "What to expect",
-    "expect1": "We'll ask about your business and goals",
-    "expect2": "We'll share where AI can create real value for you",
-    "expect3": "An honest, focused conversation — no fluff",
-    "success_heading": "Your session is booked",
-    "success_body": "Check your email for the confirmation and Google Meet link. You can also see it in your dashboard.",
-    "cancelled_heading": "Payment cancelled",
-    "cancelled_body": "Your session was not booked. You can try again whenever you're ready."
-  },
-  "auth": {
-    "login_heading": "Welcome back",
-    "register_heading": "Create your account",
-    "email": "Email",
-    "password": "Password",
-    "full_name": "Full name",
-    "sign_in": "Sign in",
-    "sign_up": "Create account",
-    "google": "Continue with Google",
-    "or": "or",
-    "have_account": "Already have an account?",
-    "no_account": "Don't have an account?",
-    "sign_out": "Sign out",
-    "check_email": "Check your email to confirm your account.",
-    "error_generic": "Something went wrong. Please try again."
-  },
-  "dashboard": {
-    "heading": "Your dashboard",
-    "welcome": "Welcome, {name}",
-    "upcoming": "Upcoming sessions",
-    "past": "Past sessions",
-    "none_upcoming": "You have no upcoming sessions.",
-    "book_one": "Book a consultation",
-    "join": "Join with Google Meet",
-    "status_confirmed": "Confirmed",
-    "status_pending": "Pending payment",
-    "status_cancelled": "Cancelled"
+  "audit": {
+    "title": "Interactive AI Opportunity Audit",
+    "sub": "Identify friction, evaluate complexity, and map your top automation opportunities in 2 minutes.",
+    "next": "Next",
+    "back": "Back",
+    "submit": "Get Audit Report",
+    "questions": {
+      "industry": "What industry is your business in?",
+      "size": "What is your company size (number of team members)?",
+      "workflow": "Which operational workflow is most repetitive or slow?",
+      "hours": "Approximately how many hours per week are spent on this repetitive workflow?",
+      "tools": "Which tools are currently used for this workflow? (Select all that apply)",
+      "goal": "What is your primary goal for implementing AI?",
+      "sensitivity": "Does this workflow involve sensitive data that requires human approval?",
+      "budget": "What is your estimated timeline and budget for this project?"
+    },
+    "results": {
+      "title": "Your AI Audit Report",
+      "heading": "Strongest First AI Opportunity:",
+      "lead_followup": "Lead Follow-Up Automation",
+      "customer_support": "Smart Customer Support Bot",
+      "data_entry": "Automated Data Processing & Sync",
+      "content_gen": "Custom AI Content Engine",
+      "impact": "Estimated Impact:",
+      "complexity": "Estimated Complexity:",
+      "rec": "Recommended Next Step:",
+      "rec_call": "Book a 20-minute solution mapping call to design this automation.",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "cta": "Book Solution Call"
+    }
   },
   "contact": {
     "label": "Contact",
@@ -179,5 +235,19 @@
   "footer": {
     "tagline": "Your vision, our intelligence, one pulse.",
     "copy": "© 2025 AIPulse Inc. All rights reserved."
+  },
+  "trust": {
+    "steps": [
+      "Strategy",
+      "Prototype",
+      "Integration",
+      "Training",
+      "Optimization"
+    ]
+  },
+  "impact": {
+    "heading_part1": "Intelligent Automation,",
+    "heading_part2": "Built for Scale.",
+    "body": "From highly sophisticated conversational AI that qualifies leads, to deep CRM automation that coordinates your entire pipeline. We deploy infrastructure that performs."
   }
 }
