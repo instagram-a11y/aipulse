@@ -16,11 +16,12 @@ export function InteractiveWorkflowDemo() {
         animate={{ rotateX: 0, rotateY: 0, opacity: 1 }}
         transition={{ duration: 1, ease: 'easeOut' }}
       >
-        <div className="absolute top-4 right-4 bg-gold/20 text-gold text-[10px] uppercase tracking-widest px-2 py-1 rounded border border-gold/30">
-          Interactive Demo
+        <div className="flex justify-between items-start gap-4 mb-8">
+          <h3 className="text-white font-display text-lg">AI Workflow Engine</h3>
+          <div className="bg-gold/20 text-gold text-[10px] uppercase tracking-widest px-2 py-1 rounded border border-gold/30 shrink-0">
+            Interactive Demo
+          </div>
         </div>
-
-        <h3 className="text-white font-display text-lg mb-8">AI Workflow Engine</h3>
 
         {/* Nodes */}
         <div className="space-y-6 relative">
