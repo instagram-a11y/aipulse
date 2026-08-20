@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react'
 
 import { InteractiveWorkflowDemo } from './InteractiveWorkflowDemo'
 import { GoldServiceTicker } from './GoldServiceTicker'
+import { Hero3DScene } from './Hero3DScene'
 import { useTranslations } from 'next-intl'
 
 export function HeroSection({ isRtl }: { isRtl: boolean }) {
@@ -41,6 +42,8 @@ export function HeroSection({ isRtl }: { isRtl: boolean }) {
     >
       {/* Background layer */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0 bg-deep-navy">
+         {/* 3D WebGL Background */}
+         <Hero3DScene />
 
          {/* Grid Pattern Background */}
          <div className="absolute inset-0 z-10 pointer-events-none bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />

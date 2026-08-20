@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
-import Image from 'next/image'
 import { PulseCrest } from '@/components/PulseCrest'
 import { FadeUp } from '@/components/FadeUp'
 import { CalEmbed } from '@/components/CalEmbed'
@@ -13,7 +12,7 @@ export default function BookPage({ params: { locale } }: { params: { locale: str
     <main className="min-h-screen bg-deep-navy text-white font-sans relative overflow-x-hidden">
       {/* Global Luxury Background */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
-        <Image src="/images/luxury_abstract_bg.jpg" alt="Luxury Background" fill className="object-cover" />
+        <img src="/images/luxury_abstract_bg.jpg" alt="Luxury Background" className="w-full h-full object-cover" />
       </div>
       {/* Hero */}
       <section className="relative z-10 pt-36 pb-20 px-6 text-center">
