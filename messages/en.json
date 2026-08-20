@@ -37,71 +37,55 @@
     }
   },
   "services": {
-    "label": "What we build for you",
-    "heading": "Solutions designed around your workflow and data",
+    "label": "AI Solutions & Consulting",
+    "heading": "Transforming Businesses with Artificial Intelligence",
     "items": {
       "agents": {
-        "title": "AI Agents",
-        "body": "Digital teammates that research, decide, draft, update and complete approved tasks."
+        "title": "Custom AI Agents",
+        "body": "We build bespoke AI agents tailored to your business logic. These intelligent assistants can handle customer inquiries, process documents, and make decisions autonomously, saving you thousands of hours of manual work."
       },
-      "chatbots": {
-        "title": "Smart Chatbots",
-        "body": "Bilingual customer support and lead qualification across website and messaging channels."
+      "automation": {
+        "title": "Process Automation",
+        "body": "Identify and eliminate bottlenecks. We integrate intelligent automation across your existing tools to streamline operations, reduce human error, and accelerate your time-to-market."
       },
-      "crm": {
-        "title": "Custom CRM",
-        "body": "One source of truth for leads, tasks, follow-ups, documents and performance."
+      "webapps": {
+        "title": "AI-Powered Platforms",
+        "body": "Development of dynamic, highly scalable web applications and platforms with built-in machine learning capabilities, enabling personalized user experiences and predictive insights."
       },
-      "websites": {
-        "title": "Dynamic Websites",
-        "body": "Pages, listings, prices, availability and content that update from live data."
+      "cloud": {
+        "title": "Data & Cloud Infrastructure",
+        "body": "Secure, scalable, and optimized cloud architectures. We help you organize your unstructured data into centralized data lakes, making it ready for advanced AI training and analytics."
       },
-      "content": {
-        "title": "AI Content Engine",
-        "body": "Brand-safe ideas, captions, visuals, scheduling and performance learning."
+      "strategy": {
+        "title": "AI Strategy Consulting",
+        "body": "Not sure where to start? We assess your business model, identify high-ROI opportunities for AI integration, and create a comprehensive roadmap for digital transformation."
       },
-      "learning": {
-        "title": "Adaptive Learning",
-        "body": "Practice that responds to each learner and unlocks the next level only after mastery."
-      },
-      "booking": {
-        "title": "Booking Automation",
-        "body": "Availability, intake, reminders, rescheduling and no-show reduction."
-      },
-      "analytics": {
-        "title": "Analytics & Forecasting",
-        "body": "Turn operational data into alerts, trends and next-best actions."
+      "custom": {
+        "title": "CRM & ERP Integration",
+        "body": "Seamlessly connect intelligent systems into your existing CRM (Salesforce, HubSpot, etc.) or ERP. Automate lead scoring, customer follow-ups, and inventory forecasting."
       }
     },
-    "process_heading": "How we work",
+    "process_heading": "Our Consulting Methodology",
     "process_sub": "Start small. Prove value. Scale what works.",
     "process": {
-      "discover": {
-        "title": "1 Discover",
-        "body": "We listen to your operations, team, and goals."
+      "discovery": {
+        "title": "1. Needs Assessment",
+        "body": "We analyze your workflows, bottlenecks, and data infrastructure to identify where AI can deliver the highest ROI."
       },
-      "prioritize": {
-        "title": "2 Prioritize",
-        "body": "We prioritize high-impact opportunities first."
+      "design": {
+        "title": "2. Strategic Design",
+        "body": "We architect a bespoke solution, selecting the right LLMs, automation tools, and tech stack tailored to your enterprise."
       },
-      "prototype": {
-        "title": "3 Prototype",
-        "body": "We build a working prototype in days, not months."
+      "build": {
+        "title": "3. Development",
+        "body": "Our engineers build, train, and integrate the AI systems securely within your existing ecosystem."
       },
-      "integrate": {
-        "title": "4 Integrate",
-        "body": "We connect it to your current systems securely."
-      },
-      "train": {
-        "title": "5 Train",
-        "body": "We train your team to ensure successful adoption."
-      },
-      "optimize": {
-        "title": "6 Optimize",
-        "body": "We monitor performance and improve with data."
+      "deploy": {
+        "title": "4. Deployment & Training",
+        "body": "We deploy the systems, monitor performance, and train your team to leverage the new AI capabilities effectively."
       }
     },
-    "pricing_note": "Every project is scoped and priced custom — no off-the-shelf plans.",
+    "pricing_note": "Every business is unique. We offer bespoke solutions designed to deliver measurable ROI, not generic templates.",
     "usecases": "Use cases"
   },
   "why": {
