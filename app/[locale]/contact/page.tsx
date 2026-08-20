@@ -10,7 +10,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
   const t = useTranslations('contact')
 
   return (
-    <main className="min-h-screen bg-deep-navy text-white font-sans relative overflow-hidden">
+    <main className="min-h-screen bg-deep-navy text-white font-sans relative overflow-x-hidden">
       {/* Global Luxury Background */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
         <img src="/images/luxury_abstract_bg.jpg" alt="Luxury Background" className="w-full h-full object-cover" />

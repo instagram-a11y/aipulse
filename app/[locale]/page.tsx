@@ -28,7 +28,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
   const isRtl = locale === 'fa'
 
   return (
-    <main className="min-h-screen bg-deep-navy text-white overflow-hidden font-sans relative">
+    <main className="min-h-screen bg-deep-navy text-white overflow-x-hidden font-sans relative">
       {/* Global Luxury Background */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
         <Image src="/images/luxury_abstract_bg.jpg" alt="Luxury Background" fill className="object-cover" />

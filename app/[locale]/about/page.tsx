@@ -22,7 +22,7 @@ export default function AboutPage() {
   const y = useTransform(scrollYProgress, [0, 1], [-50, 50])
 
   return (
-    <main className="min-h-screen bg-deep-navy text-white font-sans relative overflow-hidden" ref={containerRef}>
+    <main className="min-h-screen bg-deep-navy text-white font-sans relative overflow-x-hidden" ref={containerRef}>
       {/* Global Luxury Background */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
         <Image src="/images/luxury_abstract_bg.jpg" alt="Luxury Background" fill className="object-cover" />

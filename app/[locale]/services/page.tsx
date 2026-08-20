@@ -23,7 +23,7 @@ export default function ServicesPage({ params: { locale } }: { params: { locale:
   const isRtl = locale === 'fa'
 
   return (
-    <main className="min-h-screen bg-deep-navy text-white font-sans relative overflow-hidden">
+    <main className="min-h-screen bg-deep-navy text-white font-sans relative overflow-x-hidden">
       {/* Global Luxury Background */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
         <Image src="/images/luxury_abstract_bg.jpg" alt="Luxury Background" fill className="object-cover" />
