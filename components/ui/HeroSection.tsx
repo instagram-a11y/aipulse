@@ -4,8 +4,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import { ArrowRight } from 'lucide-react'
-import { PulseCrest } from '@/components/PulseCrest'
-import { Wordmark } from '@/components/Wordmark'
+
 import { InteractiveWorkflowDemo } from './InteractiveWorkflowDemo'
 import { GoldServiceTicker } from './GoldServiceTicker'
 import { Hero3DScene } from './Hero3DScene'
@@ -58,10 +57,7 @@ export function HeroSection({ isRtl }: { isRtl: boolean }) {
           className="w-full lg:w-[50%] flex flex-col justify-center transform-style-3d transition-transform duration-200 ease-out"
           style={{ transform: 'rotateY(var(--mouse-x, 0deg)) rotateX(var(--mouse-y, 0deg))' }}
         >
-          <div className="flex items-center justify-center lg:justify-start gap-4 mb-8 w-full lg:w-auto" dir="ltr">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 text-gold shrink-0"><PulseCrest /></div>
-            <div className="h-5 lg:h-6 text-white shrink-0"><Wordmark /></div>
-          </div>
+
           
           <h1 className="text-4xl lg:text-6xl font-light font-display leading-[1.15] mb-6">
             {t('line1')} <br/>
