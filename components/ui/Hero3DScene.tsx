@@ -4,97 +4,104 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { useRef, useMemo } from 'react'
 import * as THREE from 'three'
 
-function NeuralNetwork() {
-  const groupRef = useRef<THREE.Group>(null)
-  const linesRef = useRef<THREE.LineSegments>(null)
-  
-  const particleCount = 200
-  const maxDistance = 2.5
-  
-  // Pre-calculate positions and connections
-  const { positions, linePositions } = useMemo(() => {
+function QuantumCore() {
+  const coreRef = useRef<THREE.Group>(null)
+  const ringsRef = useRef<THREE.Group>(null)
+  const particlesRef = useRef<THREE.Points>(null)
+
+  // Particles
+  const particleCount = 300
+  const positions = useMemo(() => {
     const pos = new Float32Array(particleCount * 3)
-    const points: THREE.Vector3[] = []
-    
-    // Generate random points in a sphere
     for (let i = 0; i < particleCount; i++) {
-      const r = 3 + Math.random() * 2
+      const r = 4 + Math.random() * 4
       const theta = 2 * Math.PI * Math.random()
       const phi = Math.acos(2 * Math.random() - 1)
-      
-      const x = r * Math.sin(phi) * Math.cos(theta)
-      const y = r * Math.sin(phi) * Math.sin(theta)
-      const z = r * Math.cos(phi)
-      
-      pos[i * 3] = x
-      pos[i * 3 + 1] = y
-      pos[i * 3 + 2] = z
-      
-      points.push(new THREE.Vector3(x, y, z))
+      pos[i * 3] = r * Math.sin(phi) * Math.cos(theta)
+      pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta)
+      pos[i * 3 + 2] = r * Math.cos(phi)
     }
-    
-    // Create line segments between close points
-    const lines: number[] = []
-    for (let i = 0; i < particleCount; i++) {
-      for (let j = i + 1; j < particleCount; j++) {
-        const dist = points[i].distanceTo(points[j])
-        if (dist < maxDistance) {
-          lines.push(
-            points[i].x, points[i].y, points[i].z,
-            points[j].x, points[j].y, points[j].z
-          )
-        }
-      }
-    }
-    
-    return { 
-      positions: pos, 
-      linePositions: new Float32Array(lines)
-    }
+    return pos
   }, [particleCount])
 
   useFrame((state, delta) => {
-    if (!groupRef.current) return
+    if (!coreRef.current || !ringsRef.current || !particlesRef.current) return
     
-    const scrollY = window.scrollY
-    const scrollProgress = Math.min(scrollY / 1000, 1)
-    
-    // Rotate the whole network
-    groupRef.current.rotation.y += delta * 0.1
-    groupRef.current.rotation.x += delta * 0.05
-    
-    // Pulse effect
     const time = state.clock.elapsedTime
-    const scale = 1 + Math.sin(time) * 0.05 + scrollProgress * 1.5
-    groupRef.current.scale.set(scale, scale, scale)
-    
-    // Move towards camera on scroll
-    groupRef.current.position.z = scrollProgress * 5
-    
-    // Mouse parallax
-    const mx = (state.pointer.x * 2) 
-    const my = (state.pointer.y * 2)
-    groupRef.current.position.x += (mx - groupRef.current.position.x) * 0.05
-    groupRef.current.position.y += (my - groupRef.current.position.y) * 0.05
+    const scrollProgress = Math.min(window.scrollY / 1000, 1)
+
+    // Pulse core
+    const scale = 1 + Math.sin(time * 2) * 0.05 + scrollProgress * 0.5
+    coreRef.current.scale.set(scale, scale, scale)
+    coreRef.current.rotation.y += delta * 0.2
+    coreRef.current.rotation.x += delta * 0.1
+
+    // Rotate rings in different directions
+    ringsRef.current.children.forEach((ring, i) => {
+      ring.rotation.x += delta * (0.2 + i * 0.1)
+      ring.rotation.y += delta * (0.1 + i * 0.15)
+    })
+
+    // Rotate particles
+    particlesRef.current.rotation.y -= delta * 0.05
+
+    // Camera move on scroll
+    const group = coreRef.current.parent
+    if (group) {
+      group.position.z = scrollProgress * 3
+      
+      // Mouse parallax
+      const mx = (state.pointer.x * 2) 
+      const my = (state.pointer.y * 2)
+      group.position.x += (mx - group.position.x) * 0.05
+      group.position.y += (my - group.position.y) * 0.05
+    }
   })
 
   return (
-    <group ref={groupRef}>
-      {/* Nodes */}
-      <points>
+    <group>
+      {/* Central AI Brain (Icosahedron + Sphere) */}
+      <group ref={coreRef}>
+        <mesh>
+          <icosahedronGeometry args={[1.5, 1]} />
+          <meshBasicMaterial color="#C6A15B" wireframe transparent opacity={0.6} />
+        </mesh>
+        <mesh>
+          <sphereGeometry args={[1.4, 32, 32]} />
+          <meshPhysicalMaterial 
+            color="#071A2E" 
+            emissive="#102A43"
+            emissiveIntensity={0.5}
+            metalness={0.9} 
+            roughness={0.1} 
+            transparent 
+            opacity={0.9} 
+          />
+        </mesh>
+      </group>
+
+      {/* Rotating Data Rings */}
+      <group ref={ringsRef}>
+        {[2.2, 2.6, 3.0].map((radius, i) => (
+          <mesh key={i} rotation={[Math.random() * Math.PI, Math.random() * Math.PI, 0]}>
+            <torusGeometry args={[radius, 0.01, 16, 100]} />
+            <meshBasicMaterial color="#C6A15B" transparent opacity={0.3 + (i * 0.1)} />
+          </mesh>
+        ))}
+        {/* Outer Hexagon ring */}
+        <mesh rotation={[Math.PI/4, Math.PI/4, 0]}>
+            <torusGeometry args={[3.8, 0.02, 6, 6]} />
+            <meshBasicMaterial color="#C6A15B" wireframe transparent opacity={0.15} />
+        </mesh>
+      </group>
+
+      {/* Floating Ambient Data Dust */}
+      <points ref={particlesRef}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" count={positions.length / 3} array={positions} itemSize={3} />
         </bufferGeometry>
-        <pointsMaterial size={0.1} color="#C6A15B" transparent opacity={0.8} blending={THREE.AdditiveBlending} sizeAttenuation />
+        <pointsMaterial size={0.05} color="#C6A15B" transparent opacity={0.6} blending={THREE.AdditiveBlending} sizeAttenuation />
       </points>
-      
-      {/* Edges */}
-      <lineSegments ref={linesRef}>
-        <bufferGeometry>
-          <bufferAttribute attach="attributes-position" count={linePositions.length / 3} array={linePositions} itemSize={3} />
-        </bufferGeometry>
-        <lineBasicMaterial color="#C6A15B" transparent opacity={0.15} blending={THREE.AdditiveBlending} />
-      </lineSegments>
     </group>
   )
 }
@@ -102,9 +109,11 @@ function NeuralNetwork() {
 export function Hero3DScene() {
   return (
     <div className="absolute inset-0 z-0 w-full h-full pointer-events-none overflow-hidden">
-      <Canvas camera={{ position: [0, 0, 12], fov: 45 }}>
-        <ambientLight intensity={0.5} />
-        <NeuralNetwork />
+      <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
+        <ambientLight intensity={1} />
+        <directionalLight position={[10, 10, 10]} intensity={2} color="#C6A15B" />
+        <pointLight position={[-10, -10, -10]} intensity={1} color="#0055ff" />
+        <QuantumCore />
       </Canvas>
     </div>
   )
