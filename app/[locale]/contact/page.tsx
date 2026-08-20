@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
+import Image from 'next/image'
 import { FadeUp } from '@/components/FadeUp'
 import { ContactForm } from '@/components/ContactForm'
 
@@ -13,7 +14,7 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
     <main className="min-h-screen bg-deep-navy text-white font-sans relative overflow-x-hidden">
       {/* Global Luxury Background */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
-        <img src="/images/luxury_abstract_bg.jpg" alt="Luxury Background" className="w-full h-full object-cover" />
+        <Image src="/images/luxury_abstract_bg.jpg" alt="Luxury Background" fill className="object-cover" />
       </div>
       <section className="relative z-10 pt-36 pb-28 px-6">
         <div className="max-w-6xl mx-auto">
