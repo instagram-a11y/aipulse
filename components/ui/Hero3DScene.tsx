@@ -10,7 +10,7 @@ function QuantumCore() {
   const particlesRef = useRef<THREE.Points>(null)
 
   // Particles
-  const particleCount = 300
+  const particleCount = 100
   const positions = useMemo(() => {
     const pos = new Float32Array(particleCount * 3)
     for (let i = 0; i < particleCount; i++) {
@@ -63,7 +63,7 @@ function QuantumCore() {
       {/* Central AI Brain (Icosahedron + Sphere) */}
       <group ref={coreRef}>
         <mesh>
-          <icosahedronGeometry args={[1.5, 1]} />
+          <icosahedronGeometry args={[1.5, 0]} />
           <meshBasicMaterial color="#C6A15B" wireframe transparent opacity={0.6} />
         </mesh>
         <mesh>
@@ -84,7 +84,7 @@ function QuantumCore() {
       <group ref={ringsRef}>
         {[2.2, 2.6, 3.0].map((radius, i) => (
           <mesh key={i} rotation={[Math.random() * Math.PI, Math.random() * Math.PI, 0]}>
-            <torusGeometry args={[radius, 0.01, 16, 100]} />
+            <torusGeometry args={[radius, 0.01, 8, 40]} />
             <meshBasicMaterial color="#C6A15B" transparent opacity={0.3 + (i * 0.1)} />
           </mesh>
         ))}
@@ -120,7 +120,7 @@ export function Hero3DScene() {
 
   return (
     <div className="absolute inset-0 z-0 w-full h-full pointer-events-none overflow-hidden">
-      <Canvas camera={{ position: [0, 0, 10], fov: 45 }} dpr={[1, 1.5]} frameloop="demand">
+      <Canvas camera={{ position: [0, 0, 10], fov: 45 }} dpr={[1, 1.5]}>
         <ambientLight intensity={1} />
         <directionalLight position={[10, 10, 10]} intensity={2} color="#C6A15B" />
         <pointLight position={[-10, -10, -10]} intensity={1} color="#0055ff" />
