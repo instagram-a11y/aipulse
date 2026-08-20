@@ -1,7 +1,7 @@
 'use client'
 
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, useState, useEffect } from 'react'
 import * as THREE from 'three'
 
 function QuantumCore() {
@@ -107,9 +107,20 @@ function QuantumCore() {
 }
 
 export function Hero3DScene() {
+  const [isMobile, setIsMobile] = useState(true) // Default to true so SSR matches fast mobile load
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  if (isMobile) return null
+
   return (
     <div className="absolute inset-0 z-0 w-full h-full pointer-events-none overflow-hidden">
-      <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
+      <Canvas camera={{ position: [0, 0, 10], fov: 45 }} dpr={[1, 1.5]} frameloop="demand">
         <ambientLight intensity={1} />
         <directionalLight position={[10, 10, 10]} intensity={2} color="#C6A15B" />
         <pointLight position={[-10, -10, -10]} intensity={1} color="#0055ff" />
