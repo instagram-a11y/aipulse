@@ -46,7 +46,7 @@ export async function saveLeadAndNotify(data: LeadData) {
   try {
     await resend.emails.send({
       from: 'AIPulse Bot <bot@aipulse.ca>',
-      to: ['golnaz.resalei@gmail.com'], // Or the correct email
+      to: ['resaleigolenaz@gmail.com'], // Or the correct email
       subject: `New AI Project Lead: ${data.name}`,
       html: `
         <h2>New Project Consultation</h2>
