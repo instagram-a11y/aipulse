@@ -1,5 +1,5 @@
 import { google } from '@ai-sdk/google'
-import { streamText, tool } from 'ai'
+import { streamText, tool, generateId } from 'ai'
 import { z } from 'zod'
 import { saveLeadAndNotify, type LeadData } from '@/lib/saveLead'
 
@@ -17,6 +17,7 @@ export async function POST(req: Request) {
       text = m.parts.map((p) => p.text).join('');
     }
     return {
+      id: m.id,
       role: m.role as "user" | "assistant" | "system" | "data",
       content: text || ""
     };
@@ -25,7 +26,7 @@ export async function POST(req: Request) {
 
   try {
     const result = streamText({
-      model: google('gemini-1.5-flash'),
+      model: google('gemini-3.6-flash'),
       messages: convertedMessages,
       system: `You are the AI Business Consultant for AI Pulse.
       AI Pulse helps businesses identify and implement AI solutions, AI agents, workflow automation, integrations, and custom AI systems.
@@ -82,7 +83,9 @@ export async function POST(req: Request) {
       }
     })
 
-    return result.toUIMessageStreamResponse()
+    
+return result.toUIMessageStreamResponse();
+
   } catch (error: unknown) {
     console.error("API error", error);
     return new Response(error instanceof Error ? error.stack || error.message : "Internal Server Error", { status: 500 });

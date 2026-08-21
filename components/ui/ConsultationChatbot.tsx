@@ -35,6 +35,7 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
     }
   })
   
+  console.log('chat object keys:', Object.keys(chat));
   const messages = chat.messages
   const status = chat.status
   const sendMessage = chat.sendMessage
@@ -45,9 +46,7 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
     if (e) e.preventDefault()
     if (!localInput.trim() || isLoading) return
     
-    sendMessage({
-      text: localInput
-    })
+    sendMessage({ text: localInput })
     setLocalInput('')
   }
 
@@ -97,6 +96,7 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
                 
                 {messages.map((m: ChatMsg) => {
                   const getMsgText = (msg: ChatMsg) => {
+console.log('msg stringify:', JSON.stringify(msg));
                     if (msg.content) return msg.content;
                     if (msg.text) return msg.text;
                     if (msg.parts && Array.isArray(msg.parts) && msg.parts.length > 0) {
