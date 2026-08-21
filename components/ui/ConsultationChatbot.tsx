@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { MessageSquare, X, Send, Loader2 } from 'lucide-react'
-import { UIMessage } from 'ai'
+type ChatMsg = { id: string; role: string; content?: string; text?: string; parts?: unknown[] };
 import { motion, AnimatePresence } from 'framer-motion'
 import { useChat } from '@ai-sdk/react'
 
@@ -46,7 +46,7 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
-  const proposalReady = messages.some((m: UIMessage) => m.content?.includes('/proposal/'))
+  const proposalReady = messages.some((m: ChatMsg) => (m.content || m.text || '')?.includes('/proposal/'))
 
   return (
     <>
@@ -85,7 +85,7 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
                   </div>
                 )}
                 
-                {messages.map((m: UIMessage) => (
+                {messages.map((m: ChatMsg) => (
                   <div key={m.id} className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'}`}>
                     <div
                       className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm whitespace-pre-wrap ${
@@ -94,7 +94,7 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
                           : 'bg-white/10 text-white rounded-bl-none font-light'
                       }`}
                     >
-                      {m.content}
+                      {m.content || m.text || ''}
                     </div>
                   </div>
                 ))}
