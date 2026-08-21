@@ -37,18 +37,16 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
   
   const messages = chat.messages
   const status = chat.status
-  // @ts-expect-error - overriding strict types
-  const append = chat.append
+  const sendMessage = chat.sendMessage
 
   const isLoading = status === 'submitted' || status === 'streaming'
 
-  const handleLocalSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleLocalSubmit = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault()
     if (!localInput.trim() || isLoading) return
     
-    append({
-      role: 'user',
-      content: localInput
+    sendMessage({
+      text: localInput
     })
     setLocalInput('')
   }
@@ -132,7 +130,7 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
                     ].map((text, idx) => (
                       <button
                         key={idx}
-                        onClick={() => append({ role: 'user', content: text })}
+                        onClick={() => sendMessage({ text })}
                         className="px-3 py-1.5 text-xs bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white/80 transition-colors"
                       >
                         {text}
