@@ -1,0 +1,21 @@
+TypeError: result.toDataStreamResponse is not a function
+    at POST (webpack-internal:///(rsc)/./app/api/chat/route.ts:94:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/golenazresalei/AI PULSE/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:57228
+    at async eT.execute (/Users/golenazresalei/AI PULSE/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46851)
+    at async eT.handle (/Users/golenazresalei/AI PULSE/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:58760)
+    at async doRender (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/base-server.js:1496:28)
+    at async DevServer.renderPageComponent (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/base-server.js:818:17)
+    at async /Users/golenazresalei/AI PULSE/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/golenazresalei/AI PULSE/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/lib/router-server.js:179:21)
+    at async handleRequest (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/lib/router-server.js:359:24)
+    at async requestHandlerImpl (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/lib/router-server.js:383:13)
+    at async Server.requestListener (/Users/golenazresalei/AI PULSE/node_modules/next/dist/server/lib/start-server.js:141:13)
