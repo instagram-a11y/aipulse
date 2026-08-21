@@ -73,7 +73,7 @@ export default function AboutPage() {
               transition={{ duration: 1.5, delay: 0.8 }}
             />
           </div>
-        </section>
+        </motion.section>
 
         {/* Section 2 — Story with Parallax */}
         <section className="py-24 px-6 lg:px-16 max-w-7xl mx-auto">
