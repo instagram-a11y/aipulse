@@ -20,8 +20,7 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
 
   const [localInput, setLocalInput] = useState('')
 
-  // @ts-expect-error ignore append typing
-  const { messages, append, isLoading } = useChat({
+  const { messages, sendMessage, status } = useChat({
     // @ts-expect-error ignore api typing
     api: '/api/chat',
     initialMessages: [defaultWelcomeMessage],
@@ -31,13 +30,14 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
     }
   })
 
+  const isLoading = status === 'submitted' || status === 'streaming'
+
   const handleLocalSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!localInput.trim() || isLoading) return
     
-    append({
-      role: 'user',
-      content: localInput
+    sendMessage({
+      text: localInput
     })
     setLocalInput('')
   }
