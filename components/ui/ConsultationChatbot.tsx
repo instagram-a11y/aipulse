@@ -9,22 +9,35 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
   const [isOpen, setIsOpen] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
+  const defaultWelcomeMessage = {
+    id: 'welcome-message',
+    role: 'assistant',
+    content: isRtl
+      ? 'سلام! من مشاور هوش مصنوعی AI Pulse هستم. چطور می‌تونم برای توسعه و پیاده‌سازی راهکارهای هوش مصنوعی به کسب‌وکار شما کمک کنم؟'
+      : 'Hello! I am the AI Pulse consultant. How can I help you transform your business with AI today?'
+  }
+
+  const [localInput, setLocalInput] = useState('')
+
+  const { messages, append, isLoading, error } = useChat({
     api: '/api/chat',
-    initialMessages: [
-      {
-        id: '1',
-        role: 'assistant',
-        content: isRtl
-          ? 'سلام! من مشاور هوش مصنوعی AI Pulse هستم. چطور می‌تونم برای توسعه و پیاده‌سازی راهکارهای هوش مصنوعی به کسب‌وکار شما کمک کنم؟'
-          : 'Hello! I am the AI Pulse consultant. How can I help you transform your business with AI today?'
-      }
-    ],
+    initialMessages: [defaultWelcomeMessage],
     onError: (err) => {
       console.error('Chat error:', err)
       alert(isRtl ? 'خطا در ارتباط با سرور. لطفاً تنظیمات API را بررسی کنید.' : 'Connection error. Please check your API settings.')
     }
   })
+
+  const handleLocalSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!localInput.trim() || isLoading) return
+    
+    append({
+      role: 'user',
+      content: localInput
+    })
+    setLocalInput('')
+  }
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -61,6 +74,14 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
 
               {/* Chat Area */}
               <div className="flex-1 overflow-y-auto p-4 space-y-4" dir={isRtl ? 'rtl' : 'ltr'}>
+                {messages.length === 0 && (
+                  <div className={`flex flex-col items-start`}>
+                    <div className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm whitespace-pre-wrap bg-white/10 text-white rounded-bl-none font-light`}>
+                      {defaultWelcomeMessage.content}
+                    </div>
+                  </div>
+                )}
+                
                 {messages.map((m) => (
                   <div key={m.id} className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'}`}>
                     <div
@@ -88,17 +109,17 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
 
               {/* Input Area */}
               <div className="p-4 bg-black/20 border-t border-white/10">
-                <form onSubmit={handleSubmit} className="relative flex items-center" dir={isRtl ? 'rtl' : 'ltr'}>
+                <form onSubmit={handleLocalSubmit} className="relative flex items-center" dir={isRtl ? 'rtl' : 'ltr'}>
                   <input
-                    value={input || ''}
-                    onChange={handleInputChange}
+                    value={localInput}
+                    onChange={(e) => setLocalInput(e.target.value)}
                     placeholder={isRtl ? "پیام خود را بنویسید..." : "Type your message..."}
                     className={`w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/50 transition-all ${isRtl ? 'pl-12' : 'pr-12'}`}
                     disabled={proposalReady || isLoading}
                   />
                   <button
                     type="submit"
-                    disabled={isLoading || !(input || '').trim() || proposalReady}
+                    disabled={isLoading || !localInput.trim() || proposalReady}
                     className={`absolute ${isRtl ? 'left-2' : 'right-2'} p-2 bg-gold text-deep-navy rounded-lg hover:bg-gold/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors`}
                   >
                     <Send className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
