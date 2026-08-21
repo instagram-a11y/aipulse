@@ -14,21 +14,31 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
     id: 'welcome-message',
     role: 'assistant',
     content: isRtl
-      ? 'سلام! من مشاور هوش مصنوعی AI Pulse هستم. چطور می‌تونم برای توسعه و پیاده‌سازی راهکارهای هوش مصنوعی به کسب‌وکار شما کمک کنم؟'
-      : 'Hello! I am the AI Pulse consultant. How can I help you transform your business with AI today?'
+      ? 'سلام 👋 من مشاور هوش مصنوعی AI Pulse هستم.\n\nدرباره کسب‌وکار خود و آنچه دوست دارید با هوش مصنوعی بهبود، خودکارسازی یا بسازید به من بگویید. من کمک می‌کنم تا راه‌حل مناسب را پیدا کنید.'
+      : "Hi 👋 I'm the AI Pulse AI Consultant.\n\nTell me about your business and what you'd like to improve, automate, or build with AI. I'll help you identify the right solution."
   }
 
   const [localInput, setLocalInput] = useState('')
 
-  const { messages, sendMessage, status } = useChat({
+  const chat = useChat({
     // @ts-expect-error ignore api typing
     api: '/api/chat',
     initialMessages: [defaultWelcomeMessage],
     onError: (err) => {
       console.error('Chat error:', err)
-      alert(isRtl ? 'خطا در ارتباط با سرور. لطفاً تنظیمات API را بررسی کنید.' : 'Connection error. Please check your API settings.')
+      const errorMsg = `Error: ${err.message || 'Unknown error'}. Cause: ${err.cause || 'No cause'}. Stack: ${err.stack || 'No stack'}`
+      // @ts-expect-error - overriding strict types
+      chat.setMessages((prev: ChatMsg[]) => [
+        ...prev,
+        { id: Date.now().toString(), role: 'assistant', text: errorMsg, parts: [{type: 'text', text: errorMsg}] }
+      ])
     }
   })
+  
+  const messages = chat.messages
+  const status = chat.status
+  // @ts-expect-error - overriding strict types
+  const append = chat.append
 
   const isLoading = status === 'submitted' || status === 'streaming'
 
@@ -36,13 +46,15 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
     e.preventDefault()
     if (!localInput.trim() || isLoading) return
     
-    sendMessage({
-      text: localInput
+    append({
+      role: 'user',
+      content: localInput
     })
     setLocalInput('')
   }
 
   useEffect(() => {
+    console.log("Current Chat Messages State:", messages)
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
@@ -85,7 +97,17 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
                   </div>
                 )}
                 
-                {messages.map((m: ChatMsg) => (
+                {messages.map((m: ChatMsg) => {
+                  const getMsgText = (msg: ChatMsg) => {
+                    if (msg.content) return msg.content;
+                    if (msg.text) return msg.text;
+                    if (msg.parts && Array.isArray(msg.parts) && msg.parts.length > 0) {
+                      // @ts-expect-error part is typed as unknown
+                      return msg.parts.map(p => p.text || p.content || '').join('');
+                    }
+                    return '';
+                  };
+                  return (
                   <div key={m.id} className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'}`}>
                     <div
                       className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm whitespace-pre-wrap ${
@@ -94,10 +116,30 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
                           : 'bg-white/10 text-white rounded-bl-none font-light'
                       }`}
                     >
-                      {m.content || m.text || ''}
+                      {getMsgText(m)}
                     </div>
                   </div>
-                ))}
+                )})}
+                
+                {messages.length === 1 && messages[0].id === 'welcome-message' && (
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {[
+                      isRtl ? 'کسب‌وکارم را خودکار کن' : 'Automate my business',
+                      isRtl ? 'یک ایجنت هوش مصنوعی بساز' : 'Build an AI agent',
+                      isRtl ? 'پشتیبانی مشتریان را بهبود بده' : 'Improve customer service',
+                      isRtl ? 'فروش و سرنخ‌ها را خودکار کن' : 'Automate sales & leads',
+                      isRtl ? 'ایده دیگری برای هوش مصنوعی دارم' : 'I have another AI idea'
+                    ].map((text, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => append({ role: 'user', content: text })}
+                        className="px-3 py-1.5 text-xs bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white/80 transition-colors"
+                      >
+                        {text}
+                      </button>
+                    ))}
+                  </div>
+                )}
                 
                 {isLoading && messages[messages.length - 1]?.role === 'user' && (
                   <div className="flex items-start">
