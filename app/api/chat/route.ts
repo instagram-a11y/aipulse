@@ -25,7 +25,7 @@ export async function POST(req: Request) {
 
   try {
     const result = streamText({
-      model: google('gemini-flash-latest'),
+      model: google('gemini-3.6-flash'),
       messages: convertedMessages,
       system: `You are the AI Business Consultant for AI Pulse.
       AI Pulse helps businesses identify and implement AI solutions, AI agents, workflow automation, integrations, and custom AI systems.
