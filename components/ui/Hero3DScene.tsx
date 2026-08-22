@@ -11,7 +11,7 @@ import Image from 'next/image'
 const COLOR_NAVY = '#071A2E'
 const COLOR_GOLD = '#C6A15B'
 const COLOR_WHITE = '#FFFFFF'
-const FALLBACK_IMAGE = '/images/ai-pulse-agentic-3d-white-navy-gold-final.png'
+const FALLBACK_IMAGE = '/images/ai-pulse-agentic-3d-white-navy-gold-final.jpg'
 
 function DataPacket({ curve, timeOffset, speed = 0.5 }: { curve: THREE.QuadraticBezierCurve3, timeOffset: number, speed?: number }) {
   const ref = useRef<THREE.Mesh>(null)
