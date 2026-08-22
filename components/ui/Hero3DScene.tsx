@@ -183,7 +183,7 @@ export function Hero3DScene() {
 
   useEffect(() => {
     const checkCapabilities = () => {
-      const isDesktop = window.innerWidth >= 1024
+      const isDesktop = true // Forced to true for debugging
       const supportsWebGL = (() => {
         try {
           const canvas = document.createElement('canvas')
@@ -205,7 +205,8 @@ export function Hero3DScene() {
   // Fallback while detecting or if 3D is disabled
   if (!isLoaded || !shouldRender3D) {
     return (
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none opacity-90 transition-opacity duration-1000">
+      <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-red-500/20 pointer-events-none opacity-90 transition-opacity duration-1000">
+        <span className="absolute z-20 text-red-500">FALLBACK IMAGE LOADING</span>
         <Image 
           src={FALLBACK_IMAGE}
           alt="AI Agentic Network"
@@ -218,7 +219,8 @@ export function Hero3DScene() {
   }
 
   return (
-    <div className="absolute inset-0 w-full h-full">
+    <div className="absolute inset-0 w-full h-full bg-blue-500/20 outline outline-4 outline-blue-500">
+      <span className="absolute z-20 top-0 left-0 text-blue-500 font-bold p-2 bg-white">3D SCENE ACTIVE</span>
       <Canvas 
         camera={{ position: [0, 0, 10], fov: 45 }} 
         dpr={[1, 1.5]}
