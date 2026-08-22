@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { QuadraticBezierLine, Float, MeshTransmissionMaterial, Sphere } from '@react-three/drei'
+import { QuadraticBezierLine, Float, MeshTransmissionMaterial, Sphere, Environment } from '@react-three/drei'
 import * as THREE from 'three'
 import { useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
@@ -71,7 +71,7 @@ function AIAgent({ position, corePosition }: { position: [number, number, number
           {/* Inner Agent Core */}
           <mesh position={[0, 0, 0]}>
             <sphereGeometry args={[0.2, 16, 16]} />
-            <meshBasicMaterial color={hovered ? COLOR_GOLD : COLOR_NAVY} />
+            <meshBasicMaterial color={hovered ? COLOR_WHITE : COLOR_GOLD} />
           </mesh>
         </mesh>
       </Float>
@@ -81,7 +81,7 @@ function AIAgent({ position, corePosition }: { position: [number, number, number
         start={agentVec} 
         end={corePosition} 
         mid={curve.v1}
-        color={hovered ? COLOR_GOLD : COLOR_NAVY} 
+        color={hovered ? COLOR_WHITE : COLOR_GOLD} 
         lineWidth={hovered ? 2 : 1} 
         transparent 
         opacity={hovered ? 0.6 : 0.2} 
@@ -137,12 +137,12 @@ function CentralComputer() {
         {/* Processors */}
         <mesh position={[0, 0, 0]}>
           <boxGeometry args={[1.2, 2.5, 1.2]} />
-          <meshStandardMaterial color={COLOR_NAVY} metalness={0.8} roughness={0.2} />
+          <meshStandardMaterial color={COLOR_GOLD} metalness={0.8} roughness={0.2} />
         </mesh>
         
         {/* Gold Core */}
         <Sphere args={[0.5, 32, 32]} position={[0, 0, 0]}>
-          <meshBasicMaterial color={COLOR_GOLD} />
+          <meshBasicMaterial color={COLOR_WHITE} />
         </Sphere>
       </group>
 
@@ -230,6 +230,7 @@ export function Hero3DScene() {
         <ambientLight intensity={1.5} color={COLOR_WHITE} />
         <directionalLight position={[5, 10, 5]} intensity={2} color={COLOR_WHITE} />
         <directionalLight position={[-5, -10, -5]} intensity={0.5} color={COLOR_NAVY} />
+        <Environment preset="city" />
         
         <SceneContainer />
       </Canvas>
