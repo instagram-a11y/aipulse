@@ -5,9 +5,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        white: '#FFFFFF',
-        'deep-navy': '#071A2E',
-        'ink-navy': '#102A43',
+        white: '#071A2E',
+        'deep-navy': '#FFFFFF',
+        'ink-navy': '#F8F9FA',
         gold: '#C6A15B',
         mist: '#F3F6F8',
         slate: '#607080',

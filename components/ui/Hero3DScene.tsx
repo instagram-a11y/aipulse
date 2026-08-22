@@ -1,113 +1,117 @@
 'use client'
 
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useRef, useMemo, useState, useEffect } from 'react'
 import * as THREE from 'three'
 
-function QuantumCore() {
-  const coreRef = useRef<THREE.Group>(null)
-  const ringsRef = useRef<THREE.Group>(null)
-  const particlesRef = useRef<THREE.Points>(null)
+const PARTICLE_COUNT = 150;
+const MAX_DISTANCE = 2.5;
 
-  // Particles
-  const particleCount = 100
-  const positions = useMemo(() => {
-    const pos = new Float32Array(particleCount * 3)
-    for (let i = 0; i < particleCount; i++) {
-      const r = 4 + Math.random() * 4
-      const theta = 2 * Math.PI * Math.random()
-      const phi = Math.acos(2 * Math.random() - 1)
-      pos[i * 3] = r * Math.sin(phi) * Math.cos(theta)
-      pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta)
-      pos[i * 3 + 2] = r * Math.cos(phi)
+function DataNetwork() {
+  const pointsRef = useRef<THREE.Points>(null)
+  const linesRef = useRef<THREE.LineSegments>(null)
+  const groupRef = useRef<THREE.Group>(null)
+  const { mouse } = useThree()
+
+  // Initialize particles
+  const particles = useMemo(() => {
+    const temp = []
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      temp.push({
+        x: (Math.random() - 0.5) * 15,
+        y: (Math.random() - 0.5) * 15,
+        z: (Math.random() - 0.5) * 10,
+        vx: (Math.random() - 0.5) * 0.02,
+        vy: (Math.random() - 0.5) * 0.02,
+        vz: (Math.random() - 0.5) * 0.02,
+      })
     }
-    return pos
-  }, [particleCount])
+    return temp
+  }, [])
 
-  useFrame((state, delta) => {
-    if (!coreRef.current || !ringsRef.current || !particlesRef.current) return
-    
-    const time = state.clock.elapsedTime
-    const scrollProgress = Math.min(window.scrollY / 1000, 1)
+  const pointPositions = useMemo(() => new Float32Array(PARTICLE_COUNT * 3), [])
+  
+  // Max possible lines = N * (N-1) / 2
+  const linePositions = useMemo(() => new Float32Array(PARTICLE_COUNT * PARTICLE_COUNT * 3), [])
 
-    // Pulse core
-    const scale = 1 + Math.sin(time * 2) * 0.05 + scrollProgress * 0.5
-    coreRef.current.scale.set(scale, scale, scale)
-    coreRef.current.rotation.y += delta * 0.2
-    coreRef.current.rotation.x += delta * 0.1
+  useFrame((state) => {
+    if (!pointsRef.current || !linesRef.current || !groupRef.current) return
 
-    // Rotate rings in different directions
-    ringsRef.current.children.forEach((ring, i) => {
-      ring.rotation.x += delta * (0.2 + i * 0.1)
-      ring.rotation.y += delta * (0.1 + i * 0.15)
-    })
+    let lineIndex = 0
+    let vertexIndex = 0
 
-    // Rotate particles
-    particlesRef.current.rotation.y -= delta * 0.05
-
-    // Camera move on scroll
-    const group = coreRef.current.parent
-    if (group) {
-      group.position.z = scrollProgress * 3
+    // Update particle positions
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const p = particles[i]
       
-      // Mouse parallax
-      const mx = (state.pointer.x * 2) 
-      const my = (state.pointer.y * 2)
-      group.position.x += (mx - group.position.x) * 0.05
-      group.position.y += (my - group.position.y) * 0.05
+      // Move
+      p.x += p.vx
+      p.y += p.vy
+      p.z += p.vz
+
+      // Bounce off boundaries
+      if (p.x < -10 || p.x > 10) p.vx *= -1
+      if (p.y < -10 || p.y > 10) p.vy *= -1
+      if (p.z < -5 || p.z > 5) p.vz *= -1
+
+      // Update points geometry
+      pointPositions[vertexIndex++] = p.x
+      pointPositions[vertexIndex++] = p.y
+      pointPositions[vertexIndex++] = p.z
+
+      // Check connections
+      for (let j = i + 1; j < PARTICLE_COUNT; j++) {
+        const p2 = particles[j]
+        const dx = p.x - p2.x
+        const dy = p.y - p2.y
+        const dz = p.z - p2.z
+        const distSq = dx*dx + dy*dy + dz*dz
+
+        if (distSq < MAX_DISTANCE * MAX_DISTANCE) {
+          linePositions[lineIndex++] = p.x
+          linePositions[lineIndex++] = p.y
+          linePositions[lineIndex++] = p.z
+
+          linePositions[lineIndex++] = p2.x
+          linePositions[lineIndex++] = p2.y
+          linePositions[lineIndex++] = p2.z
+        }
+      }
     }
+
+    pointsRef.current.geometry.attributes.position.needsUpdate = true
+    linesRef.current.geometry.attributes.position.needsUpdate = true
+    linesRef.current.geometry.setDrawRange(0, lineIndex / 3)
+
+    // Gentle rotation based on time and mouse
+    const time = state.clock.elapsedTime
+    groupRef.current.rotation.y = time * 0.05 + mouse.x * 0.2
+    groupRef.current.rotation.x = mouse.y * 0.2
   })
 
   return (
-    <group>
-      {/* Central AI Brain (Icosahedron + Sphere) */}
-      <group ref={coreRef}>
-        <mesh>
-          <icosahedronGeometry args={[1.5, 1]} />
-          <meshBasicMaterial color="#C6A15B" wireframe transparent opacity={0.6} />
-        </mesh>
-        <mesh>
-          <sphereGeometry args={[1.4, 32, 32]} />
-          <meshPhysicalMaterial 
-            color="#071A2E" 
-            emissive="#102A43"
-            emissiveIntensity={0.5}
-            metalness={0.9} 
-            roughness={0.1} 
-            transparent 
-            opacity={0.9} 
-          />
-        </mesh>
-      </group>
-
-      {/* Rotating Data Rings */}
-      <group ref={ringsRef}>
-        {[2.2, 2.6, 3.0].map((radius, i) => (
-          <mesh key={i} rotation={[Math.random() * Math.PI, Math.random() * Math.PI, 0]}>
-            <torusGeometry args={[radius, 0.01, 8, 40]} />
-            <meshBasicMaterial color="#C6A15B" transparent opacity={0.3 + (i * 0.1)} />
-          </mesh>
-        ))}
-        {/* Outer Hexagon ring */}
-        <mesh rotation={[Math.PI/4, Math.PI/4, 0]}>
-            <torusGeometry args={[3.8, 0.02, 6, 6]} />
-            <meshBasicMaterial color="#C6A15B" wireframe transparent opacity={0.15} />
-        </mesh>
-      </group>
-
-      {/* Floating Ambient Data Dust */}
-      <points ref={particlesRef}>
+    <group ref={groupRef}>
+      <points ref={pointsRef}>
         <bufferGeometry>
-          <bufferAttribute attach="attributes-position" count={positions.length / 3} array={positions} itemSize={3} />
+          <bufferAttribute attach="attributes-position" count={PARTICLE_COUNT} array={pointPositions} itemSize={3} />
         </bufferGeometry>
-        <pointsMaterial size={0.05} color="#C6A15B" transparent opacity={0.6} blending={THREE.AdditiveBlending} sizeAttenuation />
+        {/* Navy color for nodes since background is white */}
+        <pointsMaterial size={0.08} color="#071A2E" transparent opacity={0.8} sizeAttenuation />
       </points>
+
+      <lineSegments ref={linesRef}>
+        <bufferGeometry>
+          <bufferAttribute attach="attributes-position" count={linePositions.length / 3} array={linePositions} itemSize={3} />
+        </bufferGeometry>
+        {/* Gold color for edges connecting the data nodes */}
+        <lineBasicMaterial color="#C6A15B" transparent opacity={0.35} />
+      </lineSegments>
     </group>
   )
 }
 
 export function Hero3DScene() {
-  const [isMobile, setIsMobile] = useState(true) // Default to true so SSR matches fast mobile load
+  const [isMobile, setIsMobile] = useState(true)
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768)
@@ -120,11 +124,8 @@ export function Hero3DScene() {
 
   return (
     <div className="absolute inset-0 z-0 w-full h-full pointer-events-none overflow-hidden">
-      <Canvas camera={{ position: [0, 0, 10], fov: 45 }} dpr={[1, 1.5]}>
-        <ambientLight intensity={1} />
-        <directionalLight position={[10, 10, 10]} intensity={2} color="#C6A15B" />
-        <pointLight position={[-10, -10, -10]} intensity={1} color="#0055ff" />
-        <QuantumCore />
+      <Canvas camera={{ position: [0, 0, 15], fov: 45 }} dpr={[1, 1.5]}>
+        <DataNetwork />
       </Canvas>
     </div>
   )
