@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import { ArrowRight } from 'lucide-react'
 
-import { InteractiveWorkflowDemo } from './InteractiveWorkflowDemo'
 import { GoldServiceTicker } from './GoldServiceTicker'
 import dynamic from 'next/dynamic'
 import { useTranslations } from 'next-intl'
@@ -46,9 +45,6 @@ export function HeroSection({ isRtl }: { isRtl: boolean }) {
     >
       {/* Background layer */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0 bg-deep-navy">
-         {/* 3D WebGL Background */}
-         <Hero3DScene />
-
          {/* Grid Pattern Background */}
          <div className="absolute inset-0 z-10 pointer-events-none bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
          <div className="absolute inset-0 bg-white/[0.02] bg-[url('/images/noise.png')] bg-repeat opacity-20 mix-blend-overlay" />
@@ -84,9 +80,9 @@ export function HeroSection({ isRtl }: { isRtl: boolean }) {
           </div>
         </motion.div>
 
-        {/* Right Demo */}
-        <div className="w-full lg:w-[50%] mt-16 lg:mt-0 flex justify-center lg:justify-end">
-           <InteractiveWorkflowDemo />
+        {/* Right Scene */}
+        <div className="w-full lg:w-[50%] mt-16 lg:mt-0 flex justify-center lg:justify-end relative min-h-[400px] lg:min-h-[600px] aspect-square lg:aspect-auto">
+           <Hero3DScene />
         </div>
       </div>
 
