@@ -1,5 +1,4 @@
-import { Cormorant_Garamond, Inter } from 'next/font/google'
-import localFont from 'next/font/local'
+import { Cormorant_Garamond, Inter, Vazirmatn } from 'next/font/google'
 
 export const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -16,12 +15,10 @@ export const inter = Inter({
   display: 'swap',
 })
 
-// Sahel — a free (OFL) Persian typeface, self-hosted. Used for all Farsi content.
-export const farsi = localFont({
-  src: [
-    { path: '../fonts/sahel/Sahel.woff2', weight: '400', style: 'normal' },
-    { path: '../fonts/sahel/Sahel-Bold.woff2', weight: '700', style: 'normal' },
-  ],
+// Vazirmatn - A beautiful modern Persian typeface
+export const farsi = Vazirmatn({
+  subsets: ['arabic'],
+  weight: ['300', '400', '700'],
   variable: '--font-farsi',
   display: 'swap',
 })

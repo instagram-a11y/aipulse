@@ -42,7 +42,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <PulseCrest size={36} animate={false} />
-          <Wordmark onDark size="sm" />
+          <Wordmark onDark={scrolled} size="sm" />
         </Link>
 
         {/* Desktop links */}
@@ -71,7 +71,7 @@ export function Navbar() {
           {/* Sign in */}
           <Link
             href="/login"
-            className="hidden sm:inline text-xs tracking-widest text-slate hover:text-gold transition-colors"
+            className={`hidden sm:inline text-xs tracking-widest transition-colors ${scrolled ? 'text-slate hover:text-gold' : 'text-slate hover:text-deep-navy'}`}
           >
             {t('login')}
           </Link>
@@ -79,8 +79,7 @@ export function Navbar() {
           {/* Language toggle */}
           <button
             onClick={toggleLocale}
-            className="text-xs tracking-widest text-slate hover:text-gold transition-colors border
-                       border-slate/30 hover:border-gold/50 px-3 py-1.5 rounded-none"
+            className={`text-xs tracking-widest transition-colors border px-3 py-1.5 rounded-none ${scrolled ? 'text-slate hover:text-gold border-slate/30 hover:border-gold/50' : 'text-slate hover:text-deep-navy border-slate/30 hover:border-deep-navy/50'}`}
           >
             {locale === 'en' ? 'فا' : 'EN'}
           </button>
@@ -88,16 +87,14 @@ export function Navbar() {
           {/* CTA */}
           <Link
             href="/book"
-            className="hidden lg:inline-flex items-center gap-2 border border-gold text-white
-                       text-xs tracking-widest uppercase px-5 py-2.5 hover:bg-gold hover:text-deep-navy
-                       transition-all duration-300"
+            className={`hidden lg:inline-flex items-center gap-2 border text-xs tracking-widest uppercase px-5 py-2.5 transition-all duration-300 ${scrolled ? 'border-gold text-white hover:bg-gold hover:text-deep-navy' : 'border-deep-navy text-deep-navy hover:bg-deep-navy hover:text-white'}`}
           >
             {t('cta')}
           </Link>
 
           {/* Hamburger */}
           <button
-            className="lg:hidden text-white"
+            className={`lg:hidden ${scrolled ? 'text-white' : 'text-deep-navy'}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
           >

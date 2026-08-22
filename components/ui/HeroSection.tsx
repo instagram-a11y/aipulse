@@ -60,7 +60,7 @@ export function HeroSection({ isRtl }: { isRtl: boolean }) {
         >
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 text-gold"><PulseCrest /></div>
-            <div className="h-6 text-deep-navy"><Wordmark /></div>
+            <div className="h-6 text-deep-navy"><Wordmark onDark={false} /></div>
           </div>
           
           <h1 className="text-4xl lg:text-6xl font-light font-display leading-[1.15] mb-6">
