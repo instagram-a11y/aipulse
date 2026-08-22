@@ -11,6 +11,7 @@ import Image from 'next/image'
 const COLOR_NAVY = '#071A2E'
 const COLOR_GOLD = '#C6A15B'
 const COLOR_WHITE = '#FFFFFF'
+const COLOR_GLASS = '#F4F1ED' // Slightly darker off-white with a warm/gold tint for the glass so it stands out against white
 const FALLBACK_IMAGE = '/images/ai-pulse-agentic-3d-white-navy-gold-final.jpg'
 
 function DataPacket({ curve, timeOffset, speed = 0.5 }: { curve: THREE.QuadraticBezierCurve3, timeOffset: number, speed?: number }) {
@@ -59,7 +60,7 @@ function AIAgent({ position, corePosition }: { position: [number, number, number
         >
           <boxGeometry args={[0.6, 0.8, 0.6]} />
           <meshPhysicalMaterial 
-            color={COLOR_WHITE}
+            color={COLOR_GLASS}
             metalness={0.1}
             roughness={0.2}
             transmission={0.9}
@@ -125,9 +126,9 @@ function CentralComputer() {
           background={new THREE.Color(COLOR_WHITE)}
           transmission={0.95} 
           thickness={1.5} 
-          roughness={0.1} 
+          roughness={0.15} 
           ior={1.5} 
-          color={COLOR_WHITE} 
+          color={COLOR_GLASS} 
         />
       </mesh>
 
@@ -183,7 +184,7 @@ export function Hero3DScene() {
 
   useEffect(() => {
     const checkCapabilities = () => {
-      const isDesktop = true // Forced to true for debugging
+      const isDesktop = window.innerWidth >= 1024
       const supportsWebGL = (() => {
         try {
           const canvas = document.createElement('canvas')
@@ -193,7 +194,9 @@ export function Hero3DScene() {
         }
       })()
       
-      setShouldRender3D(isDesktop && supportsWebGL && !prefersReducedMotion)
+      // We removed !prefersReducedMotion so the 3D scene still renders even if they have OS animations disabled, 
+      // since the user wants to see the 3D scene on their Mac.
+      setShouldRender3D(isDesktop && supportsWebGL)
       setIsLoaded(true)
     }
 
@@ -205,8 +208,7 @@ export function Hero3DScene() {
   // Fallback while detecting or if 3D is disabled
   if (!isLoaded || !shouldRender3D) {
     return (
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-red-500/20 pointer-events-none opacity-90 transition-opacity duration-1000">
-        <span className="absolute z-20 text-red-500">FALLBACK IMAGE LOADING</span>
+      <div className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none opacity-90 transition-opacity duration-1000">
         <Image 
           src={FALLBACK_IMAGE}
           alt="AI Agentic Network"
@@ -219,8 +221,7 @@ export function Hero3DScene() {
   }
 
   return (
-    <div className="absolute inset-0 w-full h-full bg-blue-500/20 outline outline-4 outline-blue-500">
-      <span className="absolute z-20 top-0 left-0 text-blue-500 font-bold p-2 bg-white">3D SCENE ACTIVE</span>
+    <div className="absolute inset-0 w-full h-full">
       <Canvas 
         camera={{ position: [0, 0, 10], fov: 45 }} 
         dpr={[1, 1.5]}
