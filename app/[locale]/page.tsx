@@ -28,8 +28,8 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
   const isRtl = locale === 'fa'
 
   return (
-    <main className="min-h-screen bg-deep-navy text-white overflow-x-hidden font-sans relative">
-      {/* Global Luxury Background */}
+    <main className="min-h-screen overflow-x-hidden font-sans relative bg-white">
+      {/* Global Luxury Background - Adjusted for white base */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
         <Image src="/images/luxury_abstract_bg.jpg" alt="Luxury Background" fill className="object-cover" />
       </div>
@@ -50,10 +50,10 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
         </div>
       </section>
 
-      {/* 3. PROBLEM RECOGNITION (Glassmorphism Cards) */}
-      <section className="py-24 px-6 lg:px-16 max-w-7xl mx-auto relative z-10">
+      {/* 3. PROBLEM RECOGNITION (Glassmorphism Cards) - White Background */}
+      <section className="bg-white py-24 px-6 lg:px-16 max-w-7xl mx-auto relative z-10">
         <FadeUp className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl lg:text-5xl font-display font-light text-white leading-tight">
+          <h2 className="text-3xl lg:text-5xl font-display font-light text-deep-navy leading-tight">
             {tp('heading')}
           </h2>
           <div className="w-16 h-px bg-gold mx-auto mt-10" />
@@ -69,8 +69,8 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             tp('items.reports')
           ].map((problem, i) => (
             <FadeUp key={i} delay={i * 0.1}>
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-gold/20 h-full hover:border-gold/50 transition-colors">
-                <p className="text-slate-100 font-medium leading-relaxed">{problem}</p>
+              <div className="bg-deep-navy/5 backdrop-blur-xl rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gold/20 h-full hover:border-gold/50 transition-colors">
+                <p className="text-slate font-medium leading-relaxed">{problem}</p>
               </div>
             </FadeUp>
           ))}
@@ -127,9 +127,9 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
         </div>
       </section>
 
-      {/* 5. FOUNDER SECTION (Editorial) */}
-      <section className="py-32 px-6 lg:px-16 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* 5. FOUNDER SECTION (Editorial) - White Background */}
+      <section className="bg-white py-32 px-6 lg:px-16 mx-auto">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <FadeUp>
             <div className="relative aspect-[3/4] w-full max-w-md mx-auto lg:mx-0 rounded-t-full overflow-hidden border border-gold/20 shadow-[0_0_40px_rgba(198,161,91,0.1)]">
               <Image 
@@ -141,7 +141,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             </div>
           </FadeUp>
           <FadeUp delay={0.2} className="flex flex-col justify-center">
-            <h2 className="text-4xl lg:text-6xl font-display font-light text-white mb-8 leading-tight">
+            <h2 className="text-4xl lg:text-6xl font-display font-light text-deep-navy mb-8 leading-tight">
               {tf('heading')}
             </h2>
             <blockquote className="text-xl lg:text-2xl font-display text-slate italic leading-relaxed mb-8 border-l-2 border-gold pl-6">

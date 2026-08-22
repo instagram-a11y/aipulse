@@ -4,14 +4,12 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import { ArrowRight } from 'lucide-react'
-
+import { PulseCrest } from '@/components/PulseCrest'
+import { Wordmark } from '@/components/Wordmark'
+import { InteractiveWorkflowDemo } from './InteractiveWorkflowDemo'
 import { GoldServiceTicker } from './GoldServiceTicker'
-import dynamic from 'next/dynamic'
+import { Hero3DScene } from './Hero3DScene'
 import { useTranslations } from 'next-intl'
-
-const Hero3DScene = dynamic(() => import('./Hero3DScene').then(mod => mod.Hero3DScene), { 
-  ssr: false,
-})
 
 export function HeroSection({ isRtl }: { isRtl: boolean }) {
   const t = useTranslations('hero')
@@ -41,13 +39,16 @@ export function HeroSection({ isRtl }: { isRtl: boolean }) {
     <section 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex flex-col bg-deep-navy text-white overflow-hidden perspective-[1000px]"
+      className="relative min-h-screen flex flex-col bg-white text-deep-navy overflow-hidden perspective-[1000px]"
     >
       {/* Background layer */}
-      <motion.div style={{ y, opacity }} className="absolute inset-0 z-0 bg-deep-navy">
+      <motion.div style={{ y, opacity }} className="absolute inset-0 z-0 bg-white">
+         {/* 3D WebGL Background */}
+         <Hero3DScene />
+
          {/* Grid Pattern Background */}
-         <div className="absolute inset-0 z-10 pointer-events-none bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-         <div className="absolute inset-0 bg-white/[0.02] bg-[url('/images/noise.png')] bg-repeat opacity-20 mix-blend-overlay" />
+         <div className="absolute inset-0 z-10 pointer-events-none bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+         <div className="absolute inset-0 bg-deep-navy/[0.02] bg-[url('/images/noise.png')] bg-repeat opacity-20 mix-blend-overlay" />
       </motion.div>
 
       <div className="relative z-10 flex-1 flex flex-col lg:flex-row items-center pt-32 pb-16 px-6 lg:px-16 max-w-[1600px] mx-auto w-full">
@@ -57,7 +58,10 @@ export function HeroSection({ isRtl }: { isRtl: boolean }) {
           className="w-full lg:w-[50%] flex flex-col justify-center transform-style-3d transition-transform duration-200 ease-out"
           style={{ transform: 'rotateY(var(--mouse-x, 0deg)) rotateX(var(--mouse-y, 0deg))' }}
         >
-
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-12 text-gold"><PulseCrest /></div>
+            <div className="h-6 text-deep-navy"><Wordmark /></div>
+          </div>
           
           <h1 className="text-4xl lg:text-6xl font-light font-display leading-[1.15] mb-6">
             {t('line1')} <br/>
@@ -71,18 +75,18 @@ export function HeroSection({ isRtl }: { isRtl: boolean }) {
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <Link
               href="/book"
-              className="group relative overflow-hidden flex items-center justify-center gap-3 bg-gold text-deep-navy px-8 py-4 w-full sm:w-auto font-medium tracking-wide transition-all duration-300"
+              className="group relative overflow-hidden flex items-center justify-center gap-3 bg-gold text-white px-8 py-4 w-full sm:w-auto font-medium tracking-wide transition-all duration-300"
             >
               <span className="relative z-10">{t('cta_primary')}</span>
               <ArrowRight className={`relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
-              <div className="absolute inset-0 bg-white transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out" />
+              <div className="absolute inset-0 bg-deep-navy transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out" />
             </Link>
           </div>
         </motion.div>
 
-        {/* Right Scene */}
-        <div className="w-full lg:w-[50%] mt-16 lg:mt-0 flex justify-center lg:justify-end relative min-h-[400px] lg:min-h-[600px] aspect-square lg:aspect-auto">
-           <Hero3DScene />
+        {/* Right Demo */}
+        <div className="w-full lg:w-[50%] mt-16 lg:mt-0 flex justify-center lg:justify-end">
+           <InteractiveWorkflowDemo />
         </div>
       </div>
 
