@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+
 import { PulseCrest } from '@/components/PulseCrest'
 import { FadeUp } from '@/components/FadeUp'
 
@@ -9,7 +9,6 @@ export default function AdminLogin() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,7 +29,7 @@ export default function AdminLogin() {
         const data = await res.json()
         setError(data.error || 'Invalid password')
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.')
     } finally {
       setLoading(false)
