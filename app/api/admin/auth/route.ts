@@ -4,10 +4,10 @@ import { cookies } from 'next/headers'
 export async function POST(request: Request) {
   try {
     const { password } = await request.json()
-    const correctPassword = process.env.ADMIN_PASSWORD
+    const correctPassword = process.env.ADMIN_PASSWORD || process.env.Admin_password
 
     if (!correctPassword) {
-      console.error('ADMIN_PASSWORD is not set in environment variables.')
+      console.error('ADMIN_PASSWORD or Admin_password is not set in environment variables.')
       return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
     }
 
