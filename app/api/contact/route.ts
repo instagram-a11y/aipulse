@@ -59,13 +59,15 @@ export async function POST(request: Request) {
   // Save to Supabase (non-blocking — don't fail the request if this errors)
   try {
     const supabase = await createServiceClient()
-    await supabase.from('contact_submissions').insert({
-      name,
-      email,
-      company: company || null,
-      message,
-      language,
-    })
+    if (supabase) {
+      await supabase.from('contact_submissions').insert({
+        name,
+        email,
+        company: company || null,
+        message,
+        language,
+      })
+    }
   } catch (err) {
     console.error('[contact] supabase insert failed:', err)
   }
