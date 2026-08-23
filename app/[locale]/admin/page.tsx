@@ -10,6 +10,19 @@ export default async function AdminDashboard({ params: { locale } }: { params: {
   const isRtl = locale === 'fa'
   const supabase = await createServiceClient()
 
+  if (!supabase) {
+    return (
+      <div className={`min-h-screen bg-deep-navy text-white pt-24 pb-12 px-6 ${isRtl ? 'rtl' : 'ltr'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+        <div className="max-w-7xl mx-auto">
+          <header className="mb-12">
+            <h1 className="text-3xl lg:text-4xl font-display font-light mb-2 text-red-400">Database Configuration Error</h1>
+            <p className="text-slate">We could not connect to Supabase. Please ensure NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are set in Vercel Environment Variables.</p>
+          </header>
+        </div>
+      </div>
+    )
+  }
+
   // Fetch data
   const { data: contacts, error: contactsError } = await supabase
     .from('contact_submissions')
