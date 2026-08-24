@@ -14,8 +14,8 @@ export interface LeadData {
 }
 
 export async function saveLeadAndNotify(data: LeadData) {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+  const supabaseUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL || '').trim()
+  const supabaseKey = (process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '').trim()
   
   const resend = new Resend(process.env.RESEND_API_KEY || 'placeholder')
   const proposalId = nanoid(10)
