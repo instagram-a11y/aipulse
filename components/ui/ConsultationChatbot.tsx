@@ -136,8 +136,8 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
                       const hasToolCall = msg.parts.some((p: unknown) => (p as { type?: string }).type === 'tool-invocation' || (p as { type?: string }).type === 'tool-call');
                       if (hasToolCall) {
                         return isRtl 
-                          ? '✅ اطلاعات شما دریافت شد و پروپوزال هوش مصنوعی شما تولید شد! لطفاً پنل ادمین را چک کنید.' 
-                          : '✅ Your information has been received and your AI proposal is generated! Please check the Admin Dashboard.';
+                          ? '✅ اطلاعات شما با موفقیت ثبت شد! متخصصین ما پروژه شما را بررسی کرده و به زودی برای هماهنگیِ جلسه با شما تماس خواهند گرفت.' 
+                          : '✅ Your information has been successfully recorded! Our experts will review your project and contact you shortly to schedule a meeting.';
                       }
                       return msg.parts.map((p: unknown) => (p as { text?: string; content?: string }).text || (p as { text?: string; content?: string }).content || '').join('');
                     }

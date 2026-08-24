@@ -84,7 +84,6 @@ export async function POST(req: Request) {
       6. Do not invent capabilities. Do not promise integrations before understanding the systems involved. Keep answers professional, concise, consultative, and natural.
       7. CRITICAL REQUIREMENT: Before generating any proposal, you MUST ask the user to provide their Name, Phone Number, and Email Address. Do not proceed until they provide this information.
       8. Once you have gathered enough information AND collected their contact details (name, phone, email), you MUST call the "generateProposal" tool. Do not ask the user for permission to generate it, just generate it.
-      8. After the tool returns the proposalId, you MUST give the user this link to view their proposal: \`https://aipulse.ca/proposal/\${proposalId}\` (or the equivalent local link: \`/proposal/\${proposalId}\`).
       `,
       tools: {
         generateProposal: tool({
