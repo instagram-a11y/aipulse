@@ -141,7 +141,7 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
                       }
                       return msg.parts.map((p: unknown) => (p as { text?: string; content?: string }).text || (p as { text?: string; content?: string }).content || '').join('');
                     }
-                    return '';
+                    return JSON.stringify(msg);
                   };
                   return (
                   <div key={m.id} className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'}`}>
