@@ -103,7 +103,7 @@ export async function POST(req: Request) {
           // @ts-ignore
           execute: async (args: LeadData) => {
             // This saves to the DB and emails Golnaz
-            const result = await saveLeadAndNotify(args)
+            const result = await saveLeadAndNotify(args, convertedMessages)
             if (typeof result === 'object' && result.error) {
               return { success: false, error: result.error }
             }
