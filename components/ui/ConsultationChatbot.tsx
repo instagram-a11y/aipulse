@@ -130,12 +130,16 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
                 
                 {messages.map((m: ChatMsg) => {
                   const getMsgText = (msg: ChatMsg) => {
-console.log('msg stringify:', JSON.stringify(msg));
                     if (msg.content) return msg.content;
                     if (msg.text) return msg.text;
                     if (msg.parts && Array.isArray(msg.parts) && msg.parts.length > 0) {
-                      // @ts-expect-error part is typed as unknown
-                      return msg.parts.map(p => p.text || p.content || '').join('');
+                      const hasToolCall = msg.parts.some((p: any) => p.type === 'tool-invocation' || p.type === 'tool-call');
+                      if (hasToolCall) {
+                        return isRtl 
+                          ? '✅ اطلاعات شما دریافت شد و پروپوزال هوش مصنوعی شما تولید شد! لطفاً پنل ادمین را چک کنید.' 
+                          : '✅ Your information has been received and your AI proposal is generated! Please check the Admin Dashboard.';
+                      }
+                      return msg.parts.map((p: any) => p.text || p.content || '').join('');
                     }
                     return '';
                   };
