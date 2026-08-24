@@ -90,32 +90,56 @@ export default async function AdminDashboard({ params: { locale } }: { params: {
                         <p className="whitespace-pre-wrap">{lead.project_details}</p>
                       </div>
                       
-                      {lead.deliverables && lead.deliverables.length > 0 && (
-                        <div>
-                          <strong className="text-white block mb-1">Proposed Deliverables:</strong>
-                          <ul className="list-disc list-inside space-y-1">
-                            {lead.deliverables.map((item: string, i: number) => <li key={i}>{item}</li>)}
-                          </ul>
-                        </div>
-                      )}
+                      {(() => {
+                        let arr: unknown[] = []
+                        if (Array.isArray(lead.deliverables)) arr = lead.deliverables
+                        else if (typeof lead.deliverables === 'string') { try { const p = JSON.parse(lead.deliverables); if (Array.isArray(p)) arr = p; } catch { arr = [lead.deliverables]; } }
+                        return arr.length > 0 && (
+                          <div>
+                            <strong className="text-white block mb-1">Proposed Deliverables:</strong>
+                            <ul className="list-disc list-inside space-y-1">
+                              {arr.map((item: unknown, i: number) => {
+                                const str = typeof item === 'object' ? JSON.stringify(item) : String(item);
+                                return <li key={i}>{str}</li>
+                              })}
+                            </ul>
+                          </div>
+                        )
+                      })()}
 
-                      {lead.execution_steps && lead.execution_steps.length > 0 && (
-                        <div>
-                          <strong className="text-white block mb-1">Execution Steps:</strong>
-                          <ol className="list-decimal list-inside space-y-1">
-                            {lead.execution_steps.map((item: string, i: number) => <li key={i}>{item}</li>)}
-                          </ol>
-                        </div>
-                      )}
+                      {(() => {
+                        let arr: unknown[] = []
+                        if (Array.isArray(lead.execution_steps)) arr = lead.execution_steps
+                        else if (typeof lead.execution_steps === 'string') { try { const p = JSON.parse(lead.execution_steps); if (Array.isArray(p)) arr = p; } catch { arr = [lead.execution_steps]; } }
+                        return arr.length > 0 && (
+                          <div>
+                            <strong className="text-white block mb-1">Execution Steps:</strong>
+                            <ol className="list-decimal list-inside space-y-1">
+                              {arr.map((item: unknown, i: number) => {
+                                const str = typeof item === 'object' ? JSON.stringify(item) : String(item);
+                                return <li key={i}>{str}</li>
+                              })}
+                            </ol>
+                          </div>
+                        )
+                      })()}
                       
-                      {lead.required_data && lead.required_data.length > 0 && (
-                        <div>
-                          <strong className="text-white block mb-1">Required Data from Client:</strong>
-                          <ul className="list-disc list-inside space-y-1 text-red-200">
-                            {lead.required_data.map((item: string, i: number) => <li key={i}>{item}</li>)}
-                          </ul>
-                        </div>
-                      )}
+                      {(() => {
+                        let arr: unknown[] = []
+                        if (Array.isArray(lead.required_data)) arr = lead.required_data
+                        else if (typeof lead.required_data === 'string') { try { const p = JSON.parse(lead.required_data); if (Array.isArray(p)) arr = p; } catch { arr = [lead.required_data]; } }
+                        return arr.length > 0 && (
+                          <div>
+                            <strong className="text-white block mb-1">Required Data from Client:</strong>
+                            <ul className="list-disc list-inside space-y-1 text-red-200">
+                              {arr.map((item: unknown, i: number) => {
+                                const str = typeof item === 'object' ? JSON.stringify(item) : String(item);
+                                return <li key={i}>{str}</li>
+                              })}
+                            </ul>
+                          </div>
+                        )
+                      })()}
                     </div>
                   </div>
                 ))}

@@ -25,17 +25,26 @@ export default async function ProposalPage({
     .single()
 
   const safeParseArray = (data: unknown) => {
+    let arr: unknown[] = []
     if (!data) return []
-    if (Array.isArray(data)) return data
-    if (typeof data === 'string') {
+    if (Array.isArray(data)) {
+      arr = data
+    } else if (typeof data === 'string') {
       try {
         const parsed = JSON.parse(data)
-        return Array.isArray(parsed) ? parsed : []
+        if (Array.isArray(parsed)) arr = parsed
       } catch {
-        return []
+        // Not valid JSON, maybe just a regular string?
+        arr = [data]
       }
     }
-    return []
+    
+    // Ensure all items are strings to prevent React 'Objects are not valid as a child' errors
+    return arr.map(item => {
+      if (typeof item === 'string') return item
+      if (typeof item === 'object') return JSON.stringify(item)
+      return String(item)
+    })
   }
 
   if (error || !lead) {
