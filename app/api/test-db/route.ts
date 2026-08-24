@@ -11,9 +11,22 @@ export async function GET() {
     }
     
     const supabase = createClient(supabaseUrl, supabaseKey);
-    const { data, error } = await supabase.from('leads').select('*').limit(5);
+    const { data: insertData, error: insertError } = await supabase.from('leads').insert([
+      {
+        id: 'test_123',
+        name: 'Test Name',
+        email: 'test@example.com',
+        phone: '123456',
+        project_details: 'test details',
+        required_data: [],
+        deliverables: [],
+        execution_steps: [],
+        language: 'fa',
+        created_at: new Date().toISOString()
+      }
+    ]).select();
     
-    return NextResponse.json({ success: true, data, error });
+    return NextResponse.json({ success: true, insertData, insertError });
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message }, { status: 500 });
   }
