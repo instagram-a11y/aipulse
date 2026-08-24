@@ -17,6 +17,14 @@ export default async function AdminDashboard({ params: { locale } }: { params: {
           <header className="mb-12">
             <h1 className="text-3xl lg:text-4xl font-display font-light mb-2 text-red-400">Database Configuration Error</h1>
             <p className="text-slate">We could not connect to Supabase. Please ensure NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are set in Vercel Environment Variables.</p>
+            <div className="mt-6 p-4 bg-red-950/30 border border-red-500/20 rounded-lg text-sm font-mono text-red-200">
+              <p>Debug Info:</p>
+              <ul className="list-disc list-inside mt-2 text-left" dir="ltr">
+                <li>NEXT_PUBLIC_SUPABASE_URL: {process.env.NEXT_PUBLIC_SUPABASE_URL ? '✅ Set' : '❌ Missing or empty'}</li>
+                <li>SUPABASE_SERVICE_ROLE_KEY: {process.env.SUPABASE_SERVICE_ROLE_KEY ? '✅ Set' : '❌ Missing or empty'}</li>
+                <li>NEXT_PUBLIC_SUPABASE_ANON_KEY: {process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? '✅ Set' : '❌ Missing or empty'}</li>
+              </ul>
+            </div>
           </header>
         </div>
       </div>
