@@ -84,8 +84,38 @@ export default async function AdminDashboard({ params: { locale } }: { params: {
                         </Link>
                       </div>
                     </div>
-                    <div className="bg-deep-navy p-4 rounded border border-white/5 text-sm text-slate-100">
-                      <strong>Project Details:</strong> {lead.project_details}
+                    <div className="bg-deep-navy p-4 rounded border border-white/5 text-sm text-slate-100 space-y-4 mt-4">
+                      <div>
+                        <strong className="text-white block mb-1">Project Details (What the client needs):</strong>
+                        <p className="whitespace-pre-wrap">{lead.project_details}</p>
+                      </div>
+                      
+                      {lead.deliverables && lead.deliverables.length > 0 && (
+                        <div>
+                          <strong className="text-white block mb-1">Proposed Deliverables:</strong>
+                          <ul className="list-disc list-inside space-y-1">
+                            {lead.deliverables.map((item: string, i: number) => <li key={i}>{item}</li>)}
+                          </ul>
+                        </div>
+                      )}
+
+                      {lead.execution_steps && lead.execution_steps.length > 0 && (
+                        <div>
+                          <strong className="text-white block mb-1">Execution Steps:</strong>
+                          <ol className="list-decimal list-inside space-y-1">
+                            {lead.execution_steps.map((item: string, i: number) => <li key={i}>{item}</li>)}
+                          </ol>
+                        </div>
+                      )}
+                      
+                      {lead.required_data && lead.required_data.length > 0 && (
+                        <div>
+                          <strong className="text-white block mb-1">Required Data from Client:</strong>
+                          <ul className="list-disc list-inside space-y-1 text-red-200">
+                            {lead.required_data.map((item: string, i: number) => <li key={i}>{item}</li>)}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
