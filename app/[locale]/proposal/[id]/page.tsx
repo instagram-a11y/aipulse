@@ -24,14 +24,14 @@ export default async function ProposalPage({
     .eq('id', id)
     .single()
 
-  const safeParseArray = (data: any) => {
+  const safeParseArray = (data: unknown) => {
     if (!data) return []
     if (Array.isArray(data)) return data
     if (typeof data === 'string') {
       try {
         const parsed = JSON.parse(data)
         return Array.isArray(parsed) ? parsed : []
-      } catch (e) {
+      } catch {
         return []
       }
     }
