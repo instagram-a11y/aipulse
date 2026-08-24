@@ -14,7 +14,7 @@ export async function GET() {
     const { data, error } = await supabase.from('leads').select('*').limit(5);
     
     return NextResponse.json({ success: true, data, error });
-  } catch (e: any) {
+  } catch (e) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }
