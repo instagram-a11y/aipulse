@@ -133,13 +133,13 @@ export function ConsultationChatbot({ isRtl }: { isRtl: boolean }) {
                     if (msg.content) return msg.content;
                     if (msg.text) return msg.text;
                     if (msg.parts && Array.isArray(msg.parts) && msg.parts.length > 0) {
-                      const hasToolCall = msg.parts.some((p: any) => p.type === 'tool-invocation' || p.type === 'tool-call');
+                      const hasToolCall = msg.parts.some((p: { type?: string; text?: string; content?: string }) => p.type === 'tool-invocation' || p.type === 'tool-call');
                       if (hasToolCall) {
                         return isRtl 
                           ? '✅ اطلاعات شما دریافت شد و پروپوزال هوش مصنوعی شما تولید شد! لطفاً پنل ادمین را چک کنید.' 
                           : '✅ Your information has been received and your AI proposal is generated! Please check the Admin Dashboard.';
                       }
-                      return msg.parts.map((p: any) => p.text || p.content || '').join('');
+                      return msg.parts.map((p: { type?: string; text?: string; content?: string }) => p.text || p.content || '').join('');
                     }
                     return '';
                   };
