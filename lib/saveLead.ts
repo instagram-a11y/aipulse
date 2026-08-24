@@ -22,26 +22,34 @@ export async function saveLeadAndNotify(data: LeadData) {
   
   // 1. Save to Supabase
   try {
-    if (supabaseUrl && supabaseKey) {
-      const supabase = createClient(supabaseUrl, supabaseKey)
-      const { error } = await supabase.from('leads').insert([
-        {
-          id: proposalId,
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          project_details: data.projectDetails,
-          required_data: data.requiredDataFromClient,
-          deliverables: data.deliverables,
-          execution_steps: data.executionSteps,
-          language: data.language,
-          created_at: new Date().toISOString()
-        }
-      ])
-      if (error) console.error('Supabase Error:', error)
+    if (!supabaseUrl || !supabaseKey) {
+      return { error: 'Missing Supabase credentials' }
     }
+    
+    const supabase = createClient(supabaseUrl, supabaseKey)
+    const { error, data: insertedData } = await supabase.from('leads').insert([
+      {
+        id: proposalId,
+        name: data.name || 'Unknown',
+        email: data.email || '',
+        phone: data.phone || '',
+        project_details: data.projectDetails || '',
+        required_data: JSON.stringify(data.requiredDataFromClient || []),
+        deliverables: JSON.stringify(data.deliverables || []),
+        execution_steps: JSON.stringify(data.executionSteps || []),
+        language: data.language || 'en',
+        created_at: new Date().toISOString()
+      }
+    ])
+    if (error) {
+      console.error('Supabase Error:', error)
+      return { error: error.message }
+    }
+    console.log('Inserted successfully:', insertedData)
+
   } catch (e) {
     console.error('Failed to save to Supabase:', e)
+    return { error: (e as Error).message }
   }
 
   // 2. Send Email to Admin (Golnaz)
